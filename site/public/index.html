@@ -9,7 +9,6 @@
   <title>IRON MAIDEN</title>
   <script src="./js/funcoes.js"></script>
   <link rel="stylesheet" href="styles/index.css">
-
 </head>
 
 <body>
@@ -19,51 +18,113 @@
       <span>IRON MAIDEN</span>
     </div>
     <div class="buttons">
-      <a href="historia.html" style="--anima:#1e9bff"><span>história</span></a>
-      <a href="membros.html" style="--anima:#00F519"><span>Membros</span></a>
+      <a href="#historia" style="--anima:#1e9bff"><span>história</span></a>
+      <a href="#membros" style="--anima:#00F519"><span>Membros</span></a>
       <a href="albuns.html" style="--anima:#8a2be2"><span>Albuns</span></a>
       <a href="cadastro.html" style="--anima:#ff0000"><span>Cadastro</span></a>
     </div>
   </header>
-  <div class="container">
-    <img src="img/albuns.jpeg" alt="">
-    <div class="texto">
-      <!-- <h1>Sobre a Banda</h1>
-      <p>O Iron Maiden é uma das bandas mais influentes e icônicas do heavy metal, com uma carreira que já
-        dura mais de quatro décadas. Formada em 1975, em Londres, Inglaterra, a banda é conhecida por suas
-        letras épicas e melodias poderosas, que misturam elementos de rock progressivo e heavy metal.
-        O Iron Maiden já lançou mais de 15 álbuns de estúdio, além de vários álbuns ao vivo e coletâneas.
-        Entre seus álbuns mais famosos estão "The Number of the Beast", "Powerslave" e "Seventh Son of a
-        Seventh Son". A banda também é famosa por suas performances ao vivo impressionantes, com shows
-        cheios de energia, pirotecnia e um enorme e icônico mascote chamado "Eddie".
-        Além de sua qualidade musical, o Iron Maiden também é conhecido por suas letras que exploram temas
-        como história,
-        mitologia, ficção científica e terror.</p> -->
-    </div>
-  </div>
-  <div class="container">
-    <img src="img/fundo.png" alt="">
-    <div class="historia">
-      <div class="slides">
-        <input type="radio" name="radio" id="anos70">
-        <input type="radio" name="radio" id="anos80">
-        <input type="radio" name="radio" id="anos90">
-        <input type="radio" name="radio" id="anos00">
-        <input type="radio" name="radio" id="anos10">
-        <input type="radio" name="radio" id="anos20">
-
-        <div class="slide s1"><img src="img/anos70.jpg" alt="foto dos anos 70"></div>
-        <div class="slide"><img src="" alt="foto dos anos 80"></div>
-        <div class="slide"><img src="" alt="foto dos anos 90"></div>
-        <div class="slide"><img src="" alt="foto dos anos 2000"></div>
-        <div class="slide"><img src="" alt="foto dos anos 2010"></div>
-        <div class="slide"><img src="" alt="foto dos anos 2020"></div>
+  <section id="home">
+    <div class="container">
+      <img src="img/albuns.jpeg" alt="">
+      <div class="texto">
+        <h1>Sobre a Banda</h1>
+        <p>O Iron Maiden é uma das bandas mais influentes e icônicas do heavy metal, com uma carreira que já
+          dura mais de quatro décadas. Formada em 1975, em Londres, Inglaterra, a banda é conhecida por suas
+          letras épicas e melodias poderosas, que misturam elementos de rock progressivo e heavy metal.
+          O Iron Maiden já lançou mais de 15 álbuns de estúdio, além de vários álbuns ao vivo e coletâneas.
+          Entre seus álbuns mais famosos estão "The Number of the Beast", "Powerslave" e "Seventh Son of a
+          Seventh Son". A banda também é famosa por suas performances ao vivo impressionantes, com shows
+          cheios de energia, pirotecnia e um enorme e icônico mascote chamado "Eddie".
+          Além de sua qualidade musical, o Iron Maiden também é conhecido por suas letras que exploram temas
+          como história,
+          mitologia, ficção científica e terror.</p>
       </div>
     </div>
-  </div>
-
-  <div class="footer">
+  </section>
+  <section id="historia">
     <div class="container2">
+      <img class="img-fundo" src="img/fundo.png" alt="">
+      <div class="historia">
+        <div class="slides">
+          <input onclick="alterar()" type="radio" name="slide" id="slide1" checked>
+          <input onclick="alterar()" type="radio" name="slide" id="slide2">
+          <input onclick="alterar()" type="radio" name="slide" id="slide3">
+          <input onclick="alterar()" type="radio" name="slide" id="slide4">
+          <input onclick="alterar()" type="radio" name="slide" id="slide5">
+          <input onclick="alterar()" type="radio" name="slide" id="slide6">
+
+          <div class="slide s1"><img src="img/anos70.jpg" alt="foto dos anos 70"></div>
+          <div class="slide"><img src="img/anos80.jpg" alt="foto dos anos 80"></div>
+          <div class="slide"><img src="img/anos90.jpg" alt="foto dos anos 90"></div>
+          <div class="slide"><img src="img/anos2000s.jpg" alt="foto dos anos 2000"></div>
+          <div class="slide"><img src="img/anos2010.jpg" alt="foto dos anos 2010"></div>
+          <div class="slide"><img src="img/anos2020.jpg" alt="foto dos anos 2020"></div>
+        </div>
+      </div>
+      <div class="navegacao">
+        <label class="barra" for="slide1">1970</label>
+        <label class="barra" for="slide2">1980</label>
+        <label class="barra" for="slide3">1990</label>
+        <label class="barra" for="slide4">2000</label>
+        <label class="barra" for="slide5">2010</label>
+        <label class="barra" for="slide6">2020</label>
+      </div>
+      <div class="texto-historia" id="texto">
+        <h1 id="titulo">Anos 70</h1>
+        <p id="paragrafo">O Iron Maiden foi formado em 25 de dezembro de 1975, quando o baixista Steve Harris deixou sua
+          banda anterior. Ele decidiu criar sua própria banda depois que suas composições foram rejeitadas por outras
+          bandas. O nome "Iron Maiden" foi inspirado em um instrumento de tortura. A primeira apresentação da banda
+          aconteceu em maio de 1976, e eles tocaram principalmente no Cart and Horses Pub, em Londres. A formação
+          original da banda teve várias mudanças, com diferentes vocalistas e guitarristas entrando e saindo. A formação
+          mais estável incluiu Steve Harris, Dave Murray, Paul Di'Anno, Clive Burr e Adrian Smith.
+          Eles passaram por dificuldades no início, mas eventualmente encontraram sucesso após o lançamento de seu álbum
+          de estreia chamado "Iron Maiden" em 1980.</p>
+      </div>
+    </div>
+  </section>
+  <section id="membros">
+    <div class="container3">
+      <img class="imagem-fundo" src="img/fundo.png" alt="">
+      <!-- <div class="container-membros">
+      <h2>Membros do Iron maiden</h2>
+      <h3>Fundadores</h3>
+      <div class="member-container">
+        <img class="member-image" src="img/steve-harris.jpeg" alt="Steve Harris">
+        <div>
+          <h4>Steve Harris</h4>
+          <p>Descrição do Steve Harris.</p>
+        </div>
+      </div>
+      <div class="member-container">
+        <img class="member-image" src="caminho-para-a-imagem-dave-murray.jpg" alt="Dave Murray">
+        <div>
+          <h4>Dave Murray</h4>
+          <p>Descrição do Dave Murray.</p>
+        </div>
+      </div>
+      <div class="member-container">
+        <img class="member-image" src="caminho-para-a-imagem-doug-sampson.jpg" alt="Doug Sampson">
+        <div>
+          <h4>Doug Sampson</h4>
+          <p>Descrição do Doug Sampson.</p>
+        </div>
+      </div>
+      <h3>Outros membros</h3>
+      <!-- Repita o seguinte bloco para cada membro adicional -->
+      <!-- <div class="member-container">
+        <img class="member-image" src="caminho-para-a-imagem-membro.jpg" alt="Nome do Membro">
+        <div>
+          <h4>Nome do Membro</h4>
+          <p>Descrição do membro.</p>
+        </div>
+      </div> -->
+      <!-- Repita o bloco acima para os outros membros -->
+    </div>
+  </section>
+  </div>
+  <div class="footer">
+    <div class="container4">
       <h4></h4>
       <span></span>
     </div>
@@ -71,3 +132,38 @@
 </body>
 
 </html>
+<script>
+  function alterar() {
+    if (slide1.checked) {
+      titulo.innerHTML = "Anos 70"
+      paragrafo.innerHTML = `O Iron Maiden foi formado em 25 de dezembro de 1975, quando o baixista Steve Harris deixou sua banda anterior. Ele decidiu criar sua própria banda depois que suas composições foram rejeitadas por outras bandas. O nome "Iron Maiden" foi inspirado em um instrumento de tortura. A primeira apresentação da banda aconteceu em maio de 1976, e eles tocaram principalmente no Cart and Horses Pub, em Londres. A formação original da banda teve várias mudanças, com diferentes vocalistas e guitarristas entrando e saindo. A formação mais estável incluiu Steve Harris, Dave Murray, Paul Di'Anno, Clive Burr e Adrian Smith. 
+      Eles passaram por dificuldades no início, mas eventualmente encontraram sucesso após o lançamento de seu álbum de estreia chamado "Iron Maiden" em 1980.`
+    }
+    if (slide2.checked) {
+      titulo.innerHTML = "Anos 80"
+      paragrafo.innerHTML = `A década de 1980 foi o período de maior sucesso comercial do Iron Maiden. Eles lançaram uma série de álbuns clássicos que se tornaram pilares do gênero. O álbum "The Number of the Beast" (1982) trouxe a entrada do vocalista Bruce Dickinson e incluiu hinos do metal como "Run to the Hills" e a faixa-título. Seguiram-se álbuns como "Piece of Mind" (1983), "Powerslave" (1984) e "Seventh Son of a Seventh Son" (1988), cada um adicionando à crescente popularidade da banda. Eles também começaram a realizar grandes turnês pelo mundo e se tornaram conhecidos por suas incríveis performances ao vivo.`
+    }
+    if (slide3.checked) {
+      titulo.innerHTML = "Anos 90"
+      paragrafo.innerHTML = `Na década de 1990, o Iron Maiden enfrentou algumas mudanças e desafios. O álbum "No Prayer for the Dying" (1990) marcou uma direção mais simples e crua em seu som. Em seguida, lançaram "Fear of the Dark" (1992), que continha a faixa-título icônica. Depois disso, Bruce Dickinson deixou a banda para seguir carreira solo. Blaze Bayley assumiu os vocais e lançaram dois álbuns, "The X Factor" (1995) e "Virtual XI" (1998). Apesar das críticas mistas, esses álbuns tiveram seu apelo e mantiveram a base de fãs leais.`
+    }
+    if (slide4.checked) {
+      titulo.innerHTML = "Anos 2000"
+      paragrafo.innerHTML = `A década de 2000 marcou o retorno triunfante de Bruce Dickinson e do guitarrista Adrian Smith à formação do Iron Maiden. Eles lançaram o álbum "Brave New World" (2000), que foi extremamente bem recebido pelos fãs e críticos, trazendo uma abordagem renovada ao seu som clássico. A banda continuou a lançar álbuns bem-sucedidos, como "Dance of Death" (2003) e "A Matter of Life and Death" (2006), que mantiveram a integridade artística da banda e sua posição como uma das principais bandas de metal do mundo.`
+    }
+    if (slide5.checked) {
+      titulo.innerHTML = "Anos 2010"
+      paragrafo.innerHTML = `Na década de 2010, foram lançados os albúns "The Final Frontier" (2010) e "The Book of Souls" (2015).
+      "The Final Frontier" mostrou a habilidade da banda em criar músicas longas e complexas, com destaque para faixas como "El Dorado" e "When the Wild Wind Blows". Já em "The Book of Souls", a banda demonstrou sua excelência musical, com temas épicos, solos de guitarra marcantes e letras cativantes. O álbum também trouxe a música mais longa da carreira do Iron Maiden, "Empire of the Clouds", com mais de 18 minutos de duração. Além de lançar novas músicas, o Iron Maiden embarcou em turnês globais impressionantes durante essa década. A turnê "The Book of Souls World Tour", que começou em 2016, foi uma das maiores e mais ambiciosas da banda até então. Eles percorreram vários continentes, tocando em arenas lotadas e em festivais de renome, proporcionando experiências memoráveis para os fãs ao redor do mundo.`
+    }
+    if (slide6.checked) {
+      titulo.innerHTML = "Anos 2020"
+      paragrafo.innerHTML = `O Iron Maiden foi formado em 1975, em Londres, Inglaterra. Durante a década de 1970, a banda passou por
+          várias mudanças em sua formação, estabelecendo uma base sólida para o que estava por vir. Eles desenvolveram
+          um som único, mesclando elementos do heavy metal tradicional com influências do punk rock. Nessa década, eles
+          lançaram seu álbum de estreia "Iron Maiden" em 1980, que apresentava músicas clássicas como
+          "Phantom of the Opera" e "Running Free".`
+    }
+
+  }
+</script>

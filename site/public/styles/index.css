@@ -14,7 +14,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  z-index: 2;
+  z-index: 99;
 }
 
 .logo {
@@ -33,6 +33,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 a {
   display: inline-block;
   position: relative;
@@ -42,7 +43,8 @@ a {
   font-size: 1.5em;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 10px 30px; /*10 px no topo e base, 30 px no lado direito e esquerdo*/
+  padding: 10px 30px;
+  /*10 px no topo e base, 30 px no lado direito e esquerdo*/
   transition: 0.5s;
 
   padding: 15px;
@@ -54,8 +56,10 @@ a {
 }
 
 a:hover {
-  letter-spacing: 0.18em; /*em = tamanho adaptativo de acordo com o tamanho da tela*/
-  background: var(--anima); /*"--" serve para chamar variaveis*/
+  letter-spacing: 0.18em;
+  /*em = tamanho adaptativo de acordo com o tamanho da tela*/
+  background: var(--anima);
+  /*"--" serve para chamar variaveis*/
   color: var(--anima);
   box-shadow: 0 0 35px var(--anima);
 }
@@ -63,7 +67,8 @@ a:hover {
 a:before {
   content: "";
   position: absolute;
-  inset: 2px; /*2px em todas a direções a posição do elemento*/
+  inset: 2px;
+  /*2px em todas a direções a posição do elemento*/
   background: #27282c;
 }
 
@@ -86,7 +91,122 @@ a span {
   object-fit: cover;
 }
 
-.texto {
+.img-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.historia {
+  height: 70vh;
+  width: 55vw;
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+
+}
+
+.navegacao {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+}
+
+.barra {
+  width: 100px;
+  height: 20px;
+  border: 2px solid black;
+  margin: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: red;
+  text-align: center;
+  background-color: #27282c;
+}
+
+.barra:hover {
+  background: yellow;
+}
+
+input {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  width: 500%;
+  height: 100%;
+}
+
+.slide {
+  width: 20%;
+  transition: 0.6s;
+
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+}
+
+#slide1:checked~.s1 {
+  margin-left: 0;
+}
+
+#slide2:checked~.s1 {
+  margin-left: -20%;
+}
+
+#slide3:checked~.s1 {
+  margin-left: -40%;
+}
+
+#slide4:checked~.s1 {
+  margin-left: -60%;
+}
+
+#slide5:checked~.s1 {
+  margin-left: -80%;
+}
+
+#slide6:checked~.s1 {
+  margin-left: -100%;
+}
+
+.texto-historia {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  z-index: 90;
+  
+}
+.texto-historia h1 {
+  font-size: 90px;
+  color: red;
+}
+.texto-historia p {
+ position: absolute;
+ top: 35%;
+ font-size: 22px;
+ color: #FFCC00;
+}
+/* .texto {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -103,9 +223,53 @@ a span {
 
 .texto p {
   font-size: 15px;
+} */
+
+.container3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
 }
 
-.container2 {
+.container3 .imagem-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-membros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 90;
+  width: 100vw;
+  height: 100vh;
+}
+
+.member-container {
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  z-index: 90;
+}
+
+.member-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+  z-index: 90;
+}
+
+.container4 {
   display: flex;
   width: 80%;
   margin: auto;
@@ -122,15 +286,14 @@ a span {
   margin: 0;
 }
 
-.footer .container {
+.footer .container4 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
 }
 
-.footer .container .version {
+.footer .container4 .version {
   font-size: 12px;
   font-weight: 800;
 }
-
