@@ -1,112 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Login</title>
-
-    <script src="./js/funcoes.js"></script>
-
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="icon" href="./assets/img/logo2.png">
+    <title>Login | Iron Iron Maiden</title>
 </head>
-
 <body>
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
-            </ul>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login</h1>
+            <!-- <img src="" class= "left-login-image" alt = "logo da empresa"> -->
         </div>
-    </div>
-
-
-    <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card card-login">
-                <h2>Olá de volta!</h2>
-                <div class="formulario">
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="Login">
-                    </div>
-                    <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="text" placeholder="******">
-                    </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div class="text-field">
+                    <label for="email">Email</label>
+                    <input type="text" id="input_email" placeholder="Insira seu e-mail">
                 </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                <div class="text-field">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="input_senha" placeholder="Insira sua senha">
                 </div>
-
-                <div id="div_erros_login"></div>
+                <button onclick = 'verificar()' class="botao-login">Login</button>
             </div>
         </div>
     </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
-    <!--footer fim-->
-
 </body>
-
 </html>
-
 <script>
+function verificar(){
+    var emailVar = input_email.value
+    var senhaVar = input_senha.value
+    if(emailVar == "" || senhaVar == ""){
+        alert('preencha todos os campos')
+    } /* else{window.location = "";} /*direciona o user até a página dashboard*/ 
 
 
-    function entrar() {
-        aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
+fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -150,10 +86,5 @@
         })
 
         return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
+}
 </script>
