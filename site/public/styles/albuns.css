@@ -25,10 +25,6 @@ body {
     margin-right: 10px;
 }
 
-.buttons {
-    display: flex;
-    align-items: center;
-}
 
 a {
     display: inline-block;
@@ -130,6 +126,8 @@ a span {
     align-items: center;
     z-index: 99;
 }
+
+
 .container-item img{
     width: 280px;
     height: 280px;

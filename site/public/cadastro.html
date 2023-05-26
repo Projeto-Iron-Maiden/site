@@ -38,24 +38,23 @@
                 <div class="text-field">
                     <label for="album">Álbum Favorito</label>
                     <select id="select_album">
-                        <option value="Iron_Maiden">IronMaiden</option>
-                        <option value="Killers">Killers</option>
-                        <option value="The_Number_Of_The_Beast">The Number Of The Beast</option>
-                        <option value="Piece_of_Mind">Piece of Mind</option>
-                        <option value="Somewhere_in_Time">Somewhere In Time</option>
-                        <option value="Seventh_Son_of_a_Seventh_Son">Seventh Son of a Seventh Son</option>
-                        <option value="No_Prayer_for_the_Dying">No Prayer for the Dying</option>
-                        <option value="Fear_of_the_Dark">Fear of the Dark</option>
-                        <option value="The_X_Factor">The X Factor</option>
-                        <option value="Virtual XI">Virtual XI</option>
-                        <option value="The_X_Factor">The X Factor</option>
-                        <option value="Virtual_XI">Virtual XI</option>
-                        <option value="Brave_New_World">Brave New World</option>
-                        <option value="Dance_of_Death">Dance of Death</option>
-                        <option value="A_Matter_Of_Life_And_Death">A matter of life and death</option>
-                        <option value="The_Final_Frontier">The Final Frontier</option>
-                        <option value="The_Book_Of_Souls">The Book Of Souls</option>
-                        <option value="Senjutsu">Senjutsu</option>
+                        <option value="1">IronMaiden</option>
+                        <option value="2">Killers</option>
+                        <option value="3">The Number Of The Beast</option>
+                        <option value="4">Piece of Mind</option>
+                        <option value="5">Powerslave</option>
+                        <option value="6">Somewhere In Time</option>
+                        <option value="7">Seventh Son of a Seventh Son</option>
+                        <option value="8">No Prayer for the Dying</option>
+                        <option value="9">Fear of the Dark</option>
+                        <option value="10">The X Factor</option>
+                        <option value="11">Virtual XI</option>
+                        <option value="12">Brave New World</option>
+                        <option value="13">Dance of Death</option>
+                        <option value="14">A matter of life and death</option>
+                        <option value="15">The Final Frontier</option>
+                        <option value="16">The Book Of Souls</option>
+                        <option value="17">Senjutsu</option>
                     </select>
                     <div id="erro_album"></div>
                 </div>
@@ -84,6 +83,7 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var idadeVar = idade_input.value;
+        var albumVar = select_album.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         erro_email.innerHTML = "";
@@ -91,14 +91,14 @@
         erro_confirmar_senha.innerHTML = "";
         erro_idade.innerHTML = "";
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || idadeVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || idadeVar == "" || albumVar == "" ) {
             alert("Preencha os campos vazios")
 
         } else {
 
-            if (idadeVar.length < 18 || idadeVar.length > 18) {
+            if (idadeVar < 12) {
 
-                erro_idade.innerHTML = 'A idade é inválida, por favor verifique o campo inserido'
+                erro_idade.innerHTML = 'Você deve possuir mais de 12 anos para criar uma conta'
                 input_idade.className = `inválido`
 
             }
@@ -143,7 +143,7 @@
                 input_confirmar_senha.className = "invalido"
 
             }
-
+            window.location = 'index.html'
         }
 
         fetch("/usuarios/cadastrar", {
@@ -155,18 +155,10 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                idadeServer: idadeVar
+                idadeServer: idadeVar,
+                albumServer: albumVar,
             })
         })
 
-
     }
-
-
 </script>
-Selecione a marca da televisão <select id="id_marca">
-    <option value="Samsung">Samsung</option>
-    <option value="LG">LG</option>
-    <option value="Mondial">Mondial</option>
-    <option value="Britânia">Britânia</option>
-</select>

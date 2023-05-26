@@ -28,26 +28,93 @@
   <div class="container">
     <img class="imagem-fundo" src="img/fundo.png" alt="">
     <div class="container-albuns">
-      <div class="container-item"><img src="img/Iron maiden 1 album.webp" alt=""></div>
-      <div class="container-item"><img src="img/Killers.jpg" alt=""></div>
-      <div class="container-item"><img src="img/the number of the beast.jpg" alt=""></div>
-      <div class="container-item"><img src="img/Piece_of_Mind.webp" alt=""></div>
-      <div class="container-item"><img src="img/powerslave.jpg" alt=""></div>
-      <div class="container-item"><img src="img/somewhere in time.jpg" alt=""></div>
-      <div class="container-item"><img src="img/seventh son.jpg" alt=""></div>
-      <div class="container-item"><img src="img/no prayer.jpg" alt=""></div>
-      <div class="container-item"><img src="img/fear of the dark.jpg" alt=""></div>
-      <div class="container-item"><img src="img/The_x_factor_-_iron_maiden.jpg" alt=""></div>
-      <div class="container-item"><img src="img/virtual xi.jpg" alt=""></div>
-      <div class="container-item"><img src="img/brave new world.jpg" alt=""></div>
-      <div class="container-item"><img src="img/dance of death.png" alt=""></div>
-      <div class="container-item"><img src="img/a matter of life and death.jpg" alt=""></div>
-      <div class="container-item"><img src="img/the final frontier.jpg" alt=""></div>
-      <div class="container-item"><img src="img/book of souls.jpg" alt=""></div>
-      <div class="container-item-ultima"><img src="img/senjutsu.jpg" alt=""></div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/Iron maiden 1 album.webp" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/Killers.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/the number of the beast.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/Piece_of_Mind.webp" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/powerslave.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/somewhere in time.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/seventh son.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/no prayer.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/fear of the dark.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/The_x_factor_-_iron_maiden.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/virtual xi.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/brave new world.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/dance of death.png" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/a matter of life and death.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/the final frontier.jpg" alt="">
+      </div>
+      <div class="container-item">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/book of souls.jpg" alt="">
+      </div>
+      <div class="container-item-ultima">
+        <button onclick="playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/senjutsu.jpg" alt="">
+      </div>
     </div>
-    <audio id="msc_sorteada" src="audio/"></audio>
-    <button onclick="playmusic()">Random</button>
+    <audio id="msc_sorteada" src="audio/Iron Maiden.mp3"></audio>
   </div>
   <div class="footer">
     <h4></h4>
@@ -59,14 +126,14 @@
 </html>
 <script>
   var ironMaiden = [
-    'Charlotte the Harlot.mp3',
-    'Iron Maiden.mp3',
-    'Phantom of the Opera.mp3',
-    'Prowler.mp3',
-    'Remember Tomorrow.mp3',
-    'Running Free.mp3',
-    'Strange World.mp3',
-    'Transylvania.mp3'
+    'audio/IronMaiden/Charlotte the Harlot.mp3',
+    'audio/IronMaiden/Iron Maiden.mp3',
+    'audio/IronMaiden/Phantom of the Opera.mp3',
+    'audio/IronMaiden/Prowler.mp3',
+    'audio/IronMaiden/Remember Tomorrow.mp3',
+    'audio/IronMaiden/Running Free.mp3',
+    'audio/IronMaiden/Strange World.mp3',
+    'audio/IronMaiden/Transylvania.mp3'
   ]
   var killers = []
   var numberofbeast = []
@@ -86,13 +153,31 @@
   var senjutsu = []
 
   function playmusic() {
-        if (ironMaiden.length > 0) {
-            var musicaSorteada = parseInt(Math.random() * ironMaiden.length);
+    if (ironMaiden.length > 0) {
+      var musicaSorteada = parseInt(Math.random() * ironMaiden.length);
 
-            msc_sorteada.src = ironMaiden[musicaSorteada];
+      var musica = msc_sorteada
+      musica.src = ironMaiden[musicaSorteada]
+      musica.play();
 
-            ironMaiden.splice(posicaoSorteada, 1);
-          console.log(musicaSorteada)
-        }
+
+      ironMaiden.splice(musicaSorteada, 1)
+      console.log(musicaSorteada)
+    } else {
+      ironMaiden.push(
+        'audio/IronMaiden/Charlotte the Harlot.mp3',
+        'audio/IronMaiden/Iron Maiden.mp3',
+        'audio/IronMaiden/Phantom of the Opera.mp3',
+        'audio/IronMaiden/Prowler.mp3',
+        'audio/IronMaiden/Remember Tomorrow.mp3',
+        'audio/IronMaiden/Running Free.mp3',
+        'audio/IronMaiden/Strange World.mp3',
+        'audio/IronMaiden/Transylvania.mp3'
+      )
+      
+    }
   }
 </script>
+</body>
+
+</html>
