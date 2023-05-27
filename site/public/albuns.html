@@ -125,6 +125,26 @@
 
 </html>
 <script>
+
+  function playmusic() {
+    fetch("/albums/listar", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Manipule os dados obtidos do servidor (data) aqui
+        console.log("Dados obtidos:", data);
+      })
+      .catch(error => {
+        console.error("Erro ao obter os dados:", error);
+      })
+  }
+
+
   var album = ""
   var id = ""
   var cont1 = 0
@@ -147,51 +167,62 @@
 
   function albumIron() {
     album = ironMaiden
-    id = 1 
+    cont1++
+    id = 1
   }
   function albumKillers() {
     album = killers
-    id = 2 
+    cont2++
+    id = 2
   }
   function albumBeast() {
     album = numberofbeast
-    id = 3 
+    cont3++
+    id = 3
   }
   function albumPiece() {
     album = pieceofmind
-    id = 4 
+    cont4++
+    id = 4
   }
   function albumPower() {
     album = powerslave
-    id = 5 
+    cont5++
+    id = 5
   }
   function albumSomewhere() {
     album = somewhere
-    id = 6 
+    cont6++
+    id = 6
   }
   function albumSeventh() {
     album = seventh
+    cont7++
     id = 7
   }
   function albumPrayer() {
     album = noprayer
-    id = 8 
+    cont8++
+    id = 8
   }
   function albumFear() {
     album = fearofthedark
-    id = 9 
+    cont9++
+    id = 9
   }
   function albumX() {
     album = xfactor
-    id = 10 
+    cont10++
+    id = 10
   }
   function albumVirtual() {
     album = virtualxi
+    cont11++
     id = 11
   }
   function albumBrave() {
     album = bravenew
-    id = 12 
+    id = 12
   }
   function albumDance() {
     album = danceofdeath
@@ -276,7 +307,7 @@
         )
       }
       if (killers.length == 0) {
-          'audio/Killers/Another life.mp3',
+        'audio/Killers/Another life.mp3',
           'audio/Killers/Drifter.mp3',
           'audio/Killers/Genghis Khan.mp3',
           'audio/Killers/Innocent Exile.mp3',
@@ -288,21 +319,22 @@
           'audio/Killers/Wrathchild.mp3'
       }
       if (condition) {
-        
+
       }
 
     }
-    fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                idSever: id,
-                countServer: count,
-                
-            })
-        })
+    fetch("/albums/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idSever: id,
+        countServer: count,
+
+      })
+    })
+
   }
 </script>
 </body>
