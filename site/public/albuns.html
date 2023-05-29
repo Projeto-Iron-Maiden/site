@@ -21,15 +21,15 @@
     <div class="buttons">
       <a href="index.html#historia" style="--anima:#1e9bff"><span>história</span></a>
       <a href="index.html#membros" style="--anima:#00F519"><span>Membros</span></a>
-      <a href="albuns.html" style="--anima:#8a2be2"><span>Albuns</span></a>
-      <a href="cadastro.html" style="--anima:#ff0000"><span>Cadastro</span></a>
+      <a href="dashboardEstatico.html" style="--anima:#8a2be2"><span>Estatisticas</span></a>
+      <a href="index.html" style="--anima:#ff0000"><span>home</span></a>
     </div>
   </header>
   <div class="container">
     <img class="imagem-fundo" src="img/fundo.png" alt="">
     <div class="container-albuns">
       <div class="container-item">
-        <button onclick="albumIron(); playmusic()" class="">Música aleatória</button>
+        <button onclick="albumIron(); playmusic()" class="botão">Música aleatória</button>
         <button onclick="info()" class="botão">Informações</button>
         <img src="img/Iron maiden 1 album.webp" alt="">
       </div>
@@ -122,10 +122,9 @@
   </div>
   </div>
 </body>
-
 </html>
 <script>
-
+  
   function playmusic() {
     fetch("/albums/listar", {
       method: "GET",
@@ -134,114 +133,137 @@
       },
 
     })
-      .then(response => response.json())
-      .then(data => {
-        // Manipule os dados obtidos do servidor (data) aqui
-        console.log("Dados obtidos:", data);
-      })
-      .catch(error => {
-        console.error("Erro ao obter os dados:", error);
-      })
+    .then(response => response.json())
+    .then(data => {
+      redirecionarParaAlbuns(data);
+      vetorAlbums
+    })
+    .catch(error => {
+      console.error("Erro ao obter os dados:", error);
+    })
   }
-
 
   var album = ""
   var id = ""
-  var cont1 = 0
-  var cont2 = 0
-  var cont3 = 0
-  var cont4 = 0
-  var cont5 = 0
-  var cont6 = 0
-  var cont7 = 0
-  var cont8 = 0
-  var cont9 = 0
-  var cont10 = 0
-  var cont11 = 0
-  var cont12 = 0
-  var cont13 = 0
-  var cont14 = 0
-  var cont15 = 0
-  var cont16 = 0
-  var cont17 = 0
+  var cont = 0
+  var cont1 = vetorAlbums[0]
+  var cont2 = vetorAlbums[1]
+  var cont3 = vetorAlbums[2]
+  var cont4 = vetorAlbums[3]
+  var cont5 = vetorAlbums[4]
+  var cont6 = vetorAlbums[5]
+  var cont7 = vetorAlbums[6]
+  var cont8 = vetorAlbums[7]
+  var cont9 = vetorAlbums[8]
+  var cont10 = vetorAlbums[9]
+  var cont11 = vetorAlbums[10]
+  var cont12 = vetorAlbums[11]
+  var cont13 = vetorAlbums[12]
+  var cont14 = vetorAlbums[13]
+  var cont15 = vetorAlbums[14]
+  var cont16 = vetorAlbums[15]
+  var cont17 = vetorAlbums[16]
 
   function albumIron() {
     album = ironMaiden
     cont1++
+    cont = cont1 
     id = 1
   }
   function albumKillers() {
     album = killers
     cont2++
+    cont = cont2
     id = 2
   }
   function albumBeast() {
     album = numberofbeast
     cont3++
+    cont = cont3
     id = 3
   }
   function albumPiece() {
     album = pieceofmind
     cont4++
+    cont = cont4
     id = 4
   }
   function albumPower() {
     album = powerslave
     cont5++
+    cont = cont5
     id = 5
   }
   function albumSomewhere() {
     album = somewhere
     cont6++
+    cont = cont6
     id = 6
   }
   function albumSeventh() {
     album = seventh
     cont7++
+    cont = cont7
     id = 7
   }
   function albumPrayer() {
     album = noprayer
     cont8++
+    cont = cont8
     id = 8
   }
   function albumFear() {
     album = fearofthedark
     cont9++
+    cont = cont9 
     id = 9
   }
   function albumX() {
     album = xfactor
     cont10++
+    cont = cont10
     id = 10
   }
   function albumVirtual() {
     album = virtualxi
     cont11++
+    cont = cont11
     id = 11
   }
   function albumBrave() {
     album = bravenew
+    cont12++ 
+    cont = cont12
     id = 12
   }
   function albumDance() {
     album = danceofdeath
+    cont13++
+    cont = cont13
     id = 13
   }
   function albumMatter() {
     album = matteroflife
+    cont14++
+    cont = cont14
     id = 14
   }
   function albumFinal() {
     album = finalfrontier
+    cont15++
+    cont = cont15
     id = 15
   }
   function albumBook() {
     album = bookofsouls
+    cont16++
+    cont = cont16
     id = 16
   }
   function albumSenjutsu() {
     album = senjutsu
+    cont17++
+    cont = cont17
     id = 17
   }
   var ironMaiden = [
@@ -290,7 +312,6 @@
       musica.src = album[musicaSorteada]
       musica.play();
 
-
       album.splice(musicaSorteada, 1)
       console.log(musicaSorteada)
     } else {
@@ -307,7 +328,8 @@
         )
       }
       if (killers.length == 0) {
-        'audio/Killers/Another life.mp3',
+        killers.push(
+          'audio/Killers/Another life.mp3',
           'audio/Killers/Drifter.mp3',
           'audio/Killers/Genghis Khan.mp3',
           'audio/Killers/Innocent Exile.mp3',
@@ -317,26 +339,27 @@
           'audio/Killers/Purgatory.mp3',
           'audio/Killers/The Ides of March.mp3',
           'audio/Killers/Wrathchild.mp3'
+        )
       }
       if (condition) {
 
       }
 
-    }
+    } 
+    
     fetch("/albums/cadastrar", {
-      method: "POST",
+      method: "PUT", //ou post
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
         idSever: id,
-        countServer: count,
+        contServer: cont,
 
       })
     })
+    
 
   }
+  
 </script>
-</body>
-
-</html>

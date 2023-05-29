@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/dashboardEstatico.css">
+    <link href='https://fonts.googleapis.com/css?family=times new roman' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>IRON MAIDEN</title>
+    <header>
+        <div class="header-wrapper">
+            <h1>IRON<br>MAIDEN</h1>
+        </div>
+    </header>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="section-1">
+            <h1>Confira mais informações!</h1>
+            <a href="historia.html" style="--anima:#1e9bff"><span>história</span></a>
+            <a href="membros.html" style="--anima:#00F519"><span>Membros</span></a>
+            <a href="albuns.html" style="--anima:#8a2be2"><span>Albuns</span></a>
+            <a href="curiosidades.html" style="--anima:#ff0000"><span>Curiosidades</span></a>
+        </div>
+        <div class="section-2">
+            <div class="caixa1">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="caixa2">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var VironMaiden = 4175000
+    var Vkillers = 4855000
+    var Vnumberofbeast = 8330000
+    var Vpieceofmind = 6615000
+    var Vpowerslave = 5610000
+    var Vsomewhere = 5290000
+    var Vseventh = 4815000
+    var Vnoprayer = 3010000
+    var Vfearofthedark = 3615000
+    var Vxfactor = 1410000
+    var Vvirtualxi = 1185000
+    var Vbravenew = 2290000
+    var Vdanceofdeath = 1490000
+    var Vmatteroflife = 1440000
+    var Vfinalfrontier = 1120000
+    var Vbookofsouls = 1090000
+    var Vsenjutsu = 480000
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Iron Maiden 1980', 'Killers 1981', 'The Number of the Beast 1982', 'Piece of Mind 1983', 'Powerslave 1984', 'Somewhere in Time 1986', 'Seventh Son of a Seventh Son 1988', 'No Prayer for the Dying 1990', 'Fear of the Dark 1992', 'The X Factor 1995', 'Virtual XI 1998', 'Brave New World 2000', 'Dance of Death 2003', 'A Matter of Life and Death 2006', 'The Final Frontier 2010', 'The Book of Souls 2015', 'Senjutsu 2021'],
+            datasets: [{
+                label: 'Vendas de discos em milhões',
+                data: [VironMaiden, Vkillers, Vnumberofbeast, Vpieceofmind, Vpowerslave, Vsomewhere, Vsomewhere, Vnoprayer, Vfearofthedark, Vxfactor, Vvirtualxi, Vbravenew, Vdanceofdeath, Vmatteroflife, Vfinalfrontier, Vbookofsouls, Vsenjutsu],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

@@ -3,7 +3,7 @@ var router = express.Router();
 
 var albumController = require("../controllers/albumController");
 
-router.post("/cadastrar", function (req, res) {
+router.put("/cadastrar", function (req, res) {
     // função a ser chamada quando acessar /albums/cadastrar
     albumController.cadastrar(req, res);
 });
