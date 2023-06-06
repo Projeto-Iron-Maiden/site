@@ -29,9 +29,11 @@
     <img class="imagem-fundo" src="img/fundo.png" alt="">
     <div class="container-albuns">
       <div class="container-item">
-        <button onclick="albumIron(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/Iron maiden 1 album.webp" alt="">
+        <div class="movimentacao">
+          <button onclick="albumIron(); playmusic()" class="botão">Música aleatória</button>
+          <button onclick="info()" class="botão">Informações</button>
+          <img src="img/Iron maiden 1 album.webp" alt="">
+        </div>
       </div>
       <div class="container-item">
         <button onclick="albumKillers(); playmusic()" class="botão">Música aleatória</button>
@@ -122,26 +124,44 @@
   </div>
   </div>
 </body>
+
 </html>
 <script>
-  
-  function playmusic() {
-    fetch("/albums/listar", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
 
-    })
-    .then(response => response.json())
-    .then(data => {
-      redirecionarParaAlbuns(data);
-      vetorAlbums
-    })
-    .catch(error => {
-      console.error("Erro ao obter os dados:", error);
-    })
+  function calcularVezes() {
+    fetch(`/albums/calcularVezes`)
+      .then(resposta => {
+
+        if (resposta.ok) {
+          resposta.json().then(resposta => {
+
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            var dadosG = {
+
+              vetorAlbums: resposta[0].Vezes_selecionado,
+
+            }
+
+            for (var i = 0; i < resposta.length; i++) {
+              vetorAlbums.push(resposta[i].Vezes_selecionado);
+            }
+
+            alertar(resposta[0].Vezes_selecionado);
+
+          });
+        } else {
+
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+      });
+
   }
+
+
 
   var album = ""
   var id = ""
@@ -167,7 +187,7 @@
   function albumIron() {
     album = ironMaiden
     cont1++
-    cont = cont1 
+    cont = cont1
     id = 1
   }
   function albumKillers() {
@@ -215,7 +235,7 @@
   function albumFear() {
     album = fearofthedark
     cont9++
-    cont = cont9 
+    cont = cont9
     id = 9
   }
   function albumX() {
@@ -232,7 +252,7 @@
   }
   function albumBrave() {
     album = bravenew
-    cont12++ 
+    cont12++
     cont = cont12
     id = 12
   }
@@ -345,8 +365,8 @@
 
       }
 
-    } 
-    
+    }
+
     fetch("/albums/cadastrar", {
       method: "PUT", //ou post
       headers: {
@@ -358,8 +378,8 @@
 
       })
     })
-    
+
 
   }
-  
+
 </script>

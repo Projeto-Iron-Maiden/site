@@ -196,19 +196,20 @@ input {
   width: 500px;
   height: 500px;
   position: absolute;
-  top: 5%;
+  top: 12%;
   left: 3%;
   z-index: 90;
   
 }
 .texto-historia h1 {
-  font-size: 90px;
+  font-size: 70px;
+  text-transform: uppercase;
   color: red;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 .texto-historia p {
  position: absolute;
- top: 35%;
+ top: 25%;
  font-size: 22px;
  color: #FFCC00;
  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;

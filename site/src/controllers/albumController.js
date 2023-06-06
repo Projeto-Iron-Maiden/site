@@ -1,13 +1,22 @@
 var albumModel = require("../models/albumModel");
 
-function listar(req, res) {
-    albumModel.listar().then(function (resultado) {
-        // precisamos informar que o resultado voltará para o front-end como uma resposta em json
-        res.status(200).json(resultado);
+function calcularVezes(req, res) {
+
+    console.log(`Recuperando quantidade de vezes em tempo real`);
+
+    medidaModel.calcularVezes().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
     }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
-    })
+    });
 }
+
 
 function cadastrar(req, res) {
     var cont = req.body.contServer;
@@ -41,6 +50,6 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    listar,
-    cadastrar
+    cadastrar,
+    calcularVezes
 }

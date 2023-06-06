@@ -121,9 +121,12 @@ a span {
     height: 300px;  
     padding: 30px;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
+
     z-index: 99;
+}
+
+.movimentacao{
+    display: flex;
 }
 
 .container-item img{
@@ -146,4 +149,8 @@ a span {
     width: 280px;
     height: 280px;
     z-index: 99;
+}
+.botoes {
+    display: flex;
+    flex-direction: column;
 }

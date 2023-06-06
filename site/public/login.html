@@ -11,10 +11,6 @@
 </head>
 <body>
     <div class="main-login">
-        <div class="left-login">
-            <h1>Faça login</h1>
-            <!-- <img src="" class= "left-login-image" alt = "logo da empresa"> -->
-        </div>
         <div class="right-login">
             <div class="card-login">
                 <h1>LOGIN</h1>
@@ -38,7 +34,7 @@ function verificar(){
     var senhaVar = input_senha.value
     if(emailVar == "" || senhaVar == ""){
         alert('preencha todos os campos')
-    } /* else{window.location = "";} /*direciona o user até a página dashboard*/ 
+    } 
 
 
 
@@ -66,7 +62,7 @@ fetch("/usuarios/autenticar", {
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "dashboardEstatico.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

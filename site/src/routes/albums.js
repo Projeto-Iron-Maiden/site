@@ -8,9 +8,8 @@ router.put("/cadastrar", function (req, res) {
     albumController.cadastrar(req, res);
 });
 
-router.get("/listar", function (req, res) {
-    // função a ser chamada quando acessar /albums/listar
-    albumController.listar(req, res);
+router.get("/calcularVezes", function (req, res) {
+    albumController.calcularVezes(req, res);
 });
 
 module.exports = router;

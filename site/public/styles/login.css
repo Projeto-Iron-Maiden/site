@@ -1,15 +1,17 @@
 body {
     margin: 0px;
     font-family: 'Poppins';
-    background: #152325;
+   
     max-width: 1200px;
     margin-left: 40px;
+    background-image: url("../img/albuns.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main-login {
     width: 100vw;
     height: 100vh;
-    background: #152325;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +59,7 @@ body {
 }
 
 .card-login>h1 {
-    color: #e49c2b;
+    color: red;
     font-weight: 700;
     margin: 0;
 }
@@ -98,7 +100,7 @@ body {
     outline: none;
     font-weight: 700;
     text-transform: uppercase;
-    background: #e49c2b;
+    background: red;
     color: #ffffff;
     letter-spacing: 3px;
     cursor: pointer;
