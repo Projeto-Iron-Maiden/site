@@ -143,6 +143,8 @@
           };
 
           alertar(resposta[0].vezes);
+          sessionStorage.vetor = resposta[0].vezes
+          console.log(sessionStorage.vetor)
           
         });
       } else {
@@ -157,7 +159,8 @@
   function alertar(vetorAlbums) {
 
     for (var i = 0; i < resposta.length; i++) {
-      vetorAlbums.push(resposta[i].vezes);
+      vetorAlbums.push(sessionStorage.vetor);
+    }
 
       var cont1 = vetorAlbums[0]
       var cont2 = vetorAlbums[1]
@@ -176,7 +179,6 @@
       var cont15 = vetorAlbums[14]
       var cont16 = vetorAlbums[15]
       var cont17 = vetorAlbums[16]
-    }
   }
 
   var album = ""
