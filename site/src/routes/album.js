@@ -3,9 +3,9 @@ var router = express.Router();
 
 var albumController = require("../controllers/albumController");
 
-router.put("/cadastrar", function (req, res) {
+router.put("/atualizarVezes", function (req, res) {
     // função a ser chamada quando acessar /albums/cadastrar
-    albumController.cadastrar(req, res);
+    albumController.atualizarVezes(req, res);
 });
 
 router.get("/calcularVezes", function (req, res) {

@@ -4,7 +4,7 @@ function calcularVezes(req, res) {
 
     console.log(`Recuperando quantidade de vezes em tempo real`);
 
-    medidaModel.calcularVezes().then(function (resultado) {
+    albumModel.calcularVezes().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -18,7 +18,8 @@ function calcularVezes(req, res) {
 }
 
 
-function cadastrar(req, res) {
+function atualizarVezes(req, res) {
+
     var cont = req.body.contServer;
     var idAlbum = req.body.idServer
 
@@ -29,7 +30,7 @@ function cadastrar(req, res) {
         res.status(400).send("Seu idAlbum está undefined!");
     } else {
 
-        albumModel.cadastrar(cont, idAlbum)
+        albumModel.atualizarVezes(cont, idAlbum)
 
             .then(
                 function (resultado) {
@@ -50,6 +51,6 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    cadastrar,
+    atualizarVezes,
     calcularVezes
 }

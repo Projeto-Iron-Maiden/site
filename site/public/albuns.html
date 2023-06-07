@@ -30,7 +30,7 @@
     <div class="container-albuns">
       <div class="container-item">
         <div class="movimentacao">
-          <button onclick="albumIron(); playmusic()" class="botão">Música aleatória</button>
+          <button onclick="calcularVezes(); albumIron(); playmusic()" class="botão">Música aleatória</button>
           <button onclick="info()" class="botão">Informações</button>
           <img src="img/Iron maiden 1 album.webp" alt="">
         </div>
@@ -128,61 +128,60 @@
 </html>
 <script>
 
+  var vetorAlbums = []
+
   function calcularVezes() {
-    fetch(`/albums/calcularVezes`)
-      .then(resposta => {
 
-        if (resposta.ok) {
-          resposta.json().then(resposta => {
+    fetch(`/album/calcularVezes/`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
 
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          var dadosG = {
+            vetorAlbums: resposta[0].vezes,
+          };
 
-            var dadosG = {
-
-              vetorAlbums: resposta[0].Vezes_selecionado,
-
-            }
-
-            for (var i = 0; i < resposta.length; i++) {
-              vetorAlbums.push(resposta[i].Vezes_selecionado);
-            }
-
-            alertar(resposta[0].Vezes_selecionado);
-
-          });
-        } else {
-
-          console.error('Nenhum dado encontrado ou erro na API');
-        }
-      })
+          alertar(resposta[0].vezes);
+          
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
       .catch(function (error) {
-        console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
-
   }
 
+  function alertar(vetorAlbums) {
 
+    for (var i = 0; i < resposta.length; i++) {
+      vetorAlbums.push(resposta[i].vezes);
+
+      var cont1 = vetorAlbums[0]
+      var cont2 = vetorAlbums[1]
+      var cont3 = vetorAlbums[2]
+      var cont4 = vetorAlbums[3]
+      var cont5 = vetorAlbums[4]
+      var cont6 = vetorAlbums[5]
+      var cont7 = vetorAlbums[6]
+      var cont8 = vetorAlbums[7]
+      var cont9 = vetorAlbums[8]
+      var cont10 = vetorAlbums[9]
+      var cont11 = vetorAlbums[10]
+      var cont12 = vetorAlbums[11]
+      var cont13 = vetorAlbums[12]
+      var cont14 = vetorAlbums[13]
+      var cont15 = vetorAlbums[14]
+      var cont16 = vetorAlbums[15]
+      var cont17 = vetorAlbums[16]
+    }
+  }
 
   var album = ""
   var id = ""
   var cont = 0
-  var cont1 = vetorAlbums[0]
-  var cont2 = vetorAlbums[1]
-  var cont3 = vetorAlbums[2]
-  var cont4 = vetorAlbums[3]
-  var cont5 = vetorAlbums[4]
-  var cont6 = vetorAlbums[5]
-  var cont7 = vetorAlbums[6]
-  var cont8 = vetorAlbums[7]
-  var cont9 = vetorAlbums[8]
-  var cont10 = vetorAlbums[9]
-  var cont11 = vetorAlbums[10]
-  var cont12 = vetorAlbums[11]
-  var cont13 = vetorAlbums[12]
-  var cont14 = vetorAlbums[13]
-  var cont15 = vetorAlbums[14]
-  var cont16 = vetorAlbums[15]
-  var cont17 = vetorAlbums[16]
 
   function albumIron() {
     album = ironMaiden
@@ -222,7 +221,7 @@
   }
   function albumSeventh() {
     album = seventh
-    cont7++
+      / cont7++
     cont = cont7
     id = 7
   }
@@ -325,6 +324,7 @@
   var senjutsu = []
 
   function playmusic() {
+
     if (album.length > 0) {
       var musicaSorteada = parseInt(Math.random() * album.length);
 
@@ -361,24 +361,24 @@
           'audio/Killers/Wrathchild.mp3'
         )
       }
-      if (condition) {
+      if (numberofbeast.length == 0) {
 
       }
 
     }
 
-    fetch("/albums/cadastrar", {
+    fetch("/album/atualizarVezes/", {
       method: "PUT", //ou post
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        idSever: id,
+
+        idServer: id,
         contServer: cont,
 
       })
     })
-
 
   }
 
