@@ -30,7 +30,7 @@
     <div class="container-albuns">
       <div class="container-item">
         <div class="movimentacao">
-          <button onclick="calcularVezes(); albumIron(); playmusic()" class="botão">Música aleatória</button>
+          <button onclick="calcularVezes(); alertar(); albumIron(); playmusic()" class="botão">Música aleatória</button>
           <button onclick="info()" class="botão">Informações</button>
           <img src="img/Iron maiden 1 album.webp" alt="">
         </div>
@@ -144,8 +144,8 @@
 
           alertar(resposta[0].vezes);
           sessionStorage.vetor = resposta[0].vezes
-          console.log(sessionStorage.vetor)
-          
+   
+
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');

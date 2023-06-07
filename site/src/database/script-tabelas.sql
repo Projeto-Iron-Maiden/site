@@ -14,6 +14,8 @@ CREATE TABLE usuario (
 	REFERENCES album(idAlbum)
 );
 
+select * from usuario;
+
 CREATE TABLE MembrosBanda (
   idMembro INT PRIMARY KEY,
   nome VARCHAR(50),
@@ -51,25 +53,25 @@ constraint fkAlb foreign key (fkAlbum)
 	references album(idAlbum)
 );
  
- INSERT INTO album (idAlbum, Nome, DtLançamento, QtdMusicas, DuraçãoTotal, Gravadora)
+ INSERT INTO album (idAlbum, Nome, DtLançamento, QtdMusicas, DuraçãoTotal, Gravadora, Vezes_Selecionado)
 VALUES 
-    (1, 'Iron Maiden', '1980-04-14', 8, '40:06 min', 'EMI'),
-    (2, 'Killers', '1981-02-02', 10, '38:49 min', 'EMI'),
-    (3, 'The Number of the Beast', '1982-03-29', 8, '39:14 min', 'EMI'),
-    (4, 'Piece of Mind', '1983-05-16', 9, '45:04 min', 'EMI'),
-    (5, 'Powerslave', '1984-09-03', 8, '51:12 min', 'EMI'),
-    (6, 'Somewhere in Time', '1986-09-29', 8, '51:17 min', 'EMI'),
-    (7, 'Seventh Son of a Seventh Son', '1988-04-11', 8, '44:06 min', 'EMI'),
-    (8, 'No Prayer for the Dying', '1990-10-01', 10, '43:53 min', 'EMI'),
-    (9, 'Fear of the Dark', '1992-05-11', 12, '58:37 min', 'EMI'),
-    (10, 'The X Factor', '1995-10-02', 11, '66:57 min', 'EMI'),
-    (11, 'Virtual XI', '1998-03-23', 8, '53:19 min', 'EMI'),
-    (12, 'Brave New World', '2000-05-29', 10, '66:57 min', 'EMI'),
-    (13, 'Dance of Death', '2003-09-08', 11, '67:30 min', 'EMI'),
-    (14, 'A Matter of Life and Death', '2006-08-28', 10, '72:08min', 'EMI'),
-    (15, 'The Final Frontier', '2010-08-13', 10, '76:35 min', 'EMI'),
-    (16, 'The Book of Souls', '2015-09-04', 11, '92:11 min', 'Parlophone'),
-    (17, 'Senjutsu', '2021-09-03', 10, '82:52', 'Parlophone');
+    (1, 'Iron Maiden', '1980-04-14', 8, '40:06 min', 'EMI', 0),
+    (2, 'Killers', '1981-02-02', 10, '38:49 min', 'EMI', 0),
+    (3, 'The Number of the Beast', '1982-03-29', 8, '39:14 min', 'EMI', 0),
+    (4, 'Piece of Mind', '1983-05-16', 9, '45:04 min', 'EMI', 0),
+    (5, 'Powerslave', '1984-09-03', 8, '51:12 min', 'EMI', 0),
+    (6, 'Somewhere in Time', '1986-09-29', 8, '51:17 min', 'EMI', 0),
+    (7, 'Seventh Son of a Seventh Son', '1988-04-11', 8, '44:06 min', 'EMI', 0),
+    (8, 'No Prayer for the Dying', '1990-10-01', 10, '43:53 min', 'EMI', 0),
+    (9, 'Fear of the Dark', '1992-05-11', 12, '58:37 min', 'EMI', 0),
+    (10, 'The X Factor', '1995-10-02', 11, '66:57 min', 'EMI', 0),
+    (11, 'Virtual XI', '1998-03-23', 8, '53:19 min', 'EMI', 0),
+    (12, 'Brave New World', '2000-05-29', 10, '66:57 min', 'EMI', 0),
+    (13, 'Dance of Death', '2003-09-08', 11, '67:30 min', 'EMI', 0),
+    (14, 'A Matter of Life and Death', '2006-08-28', 10, '72:08min', 'EMI', 0),
+    (15, 'The Final Frontier', '2010-08-13', 10, '76:35 min', 'EMI', 0),
+    (16, 'The Book of Souls', '2015-09-04', 11, '92:11 min', 'Parlophone', 0),
+    (17, 'Senjutsu', '2021-09-03', 10, '82:52', 'Parlophone', 0);
     
 SELECT * FROM album;
 
@@ -259,7 +261,12 @@ VALUES
 	(161, 'The Parchment', 9, 'Heavy Metal', '12:39 min', 17),
 	(162, 'Hell on Earth', 10, 'Heavy Metal', '11:19 min', 17);
     
+
     select * from musica;
-    select Vezes_selecionado from album;
-    UPDATE album set Vezes_Selecionado = 1 where idAlbum = 1;
+    
+    select Vezes_selecionado as vezes from album;
+    
+    
+    
+    
     
