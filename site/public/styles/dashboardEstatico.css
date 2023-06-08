@@ -1,144 +1,111 @@
-  header {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    color: red;
-    top: 0;
-    width: 100%;
-    box-sizing: border-box;
-    border-bottom: 1px solid red;
-  }
-   .header-wrapper{
-    display: flex;
-    align-items: center;
-   }
-  header img {
-    width: 130px;
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  header h1 {
-    
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    font-family: 'maiden.ttf'
-  }
-  
-  body {
-    background-color: black;
-    margin: 10px;
-  }
-  
-  .container {
-    display: flex;
-    height: 100vh;
-    border-left: 1px solid red;
-    border-right: 1px solid red;
-    margin-top: 0px;
-  }
-  
-  .section-1 {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 20%;
-    justify-content: space-between;
-    border-left: 1px solid red;
-    border-right: 1px solid red;
-    color: white;
-    text-align: center;
-    position: static;
-    margin-bottom: 200px;
-  }
-  
-  .section-1 h1 {
-    font-family: 'maiden.ttf', sans-serif;
-    font-size: 30px;
-    color: #fff;
-    text-shadow: 2px 2px #000;
-  }
-  
-  a {
-    position: relative;
-    background: black;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    padding: 10px 30px; /*10 px no topo e base, 30 px no lado direito e esquerdo*/
-    transition: 0.5s;
-  
-    padding: 30px;
-    border-radius: 2px;
-    color: #FFCC00;
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: 20px;
-  }
-  
-  a:hover {
-    letter-spacing: 0.18em; /*em = tamanho adaptativo de acordo com o tamanho da tela*/
-    background: var(--anima); /*"--" serve para chamar variaveis*/
-    color: var(--anima);
-    box-shadow: 0 0 35px var(--anima);
-  }
-  
-  a:before {
-    content: "";
-    position: absolute;
-    inset: 2px; /*2px em todas a direções a posição do elemento*/
-    background: #27282c;
-  }
-  
-  a span {
-    position: relative;
-  }
-  
-  .section-2 {
-  
-    flex-basis: 80%;
-    border-left: 1px solid red;
-    border-right: 1px solid red;
-    color: white;
-  }
-  
-  .caixa1 {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    color: white;
-    text-align: left;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  .caixa1 img {
-    width: 400px;
-    height: 300px;
-    margin: 10px;
-    border: 1px solid black;
-    display: block;
-  }
-  
-  .caixa2 {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    color: white;
-    text-align: left;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  .caixa2 img {
-    width: 400px;
-    height: 300px;
-    margin: 10px;
-    border: 1px solid black;
-    display: block;
-  }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 100px;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 99;
+}
+
+.logo {
+  display: inline-block;
+  color: red;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+
+a {
+  display: inline-block;
+  position: relative;
+  background: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  /*10 px no topo e base, 30 px no lado direito e esquerdo*/
+  transition: 0.5s;
+
+  padding: 15px;
+  border-radius: 2px;
+  color: #FFCC00;
+  margin-left: 10px;
+
+  font-size: 15px;
+}
+
+a:hover {
+  letter-spacing: 0.18em;
+  /*em = tamanho adaptativo de acordo com o tamanho da tela*/
+  background: var(--anima);
+  /*"--" serve para chamar variaveis*/
+  color: var(--anima);
+  box-shadow: 0 0 35px var(--anima);
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  /*2px em todas a direções a posição do elemento*/
+  background: #27282c;
+}
+
+a span {
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chart-container {
+  margin: 10px;
+}
+
+.chart {
+  width: 738px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+.footer {
+  height: 65px;
+  width: 100%;
+  background-color: red;
+  color: #fff;
+}
+
+.footer h4 {
+  margin: 0;
+}
+
+.footer .container {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer .container .version {
+  font-size: 12px;
+  font-weight: 800;
+}

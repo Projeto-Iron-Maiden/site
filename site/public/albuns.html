@@ -19,8 +19,7 @@
       <span>IRON MAIDEN</span>
     </div>
     <div class="buttons">
-      <a href="index.html#historia" style="--anima:#1e9bff"><span>história</span></a>
-      <a href="index.html#membros" style="--anima:#00F519"><span>Membros</span></a>
+      <a href="index.html#membros" style="--anima:#00F519"><span>Playlist</span></a>
       <a href="dashboardEstatico.html" style="--anima:#8a2be2"><span>Estatisticas</span></a>
       <a href="index.html" style="--anima:#ff0000"><span>home</span></a>
     </div>
@@ -29,11 +28,9 @@
     <img class="imagem-fundo" src="img/fundo.png" alt="">
     <div class="container-albuns">
       <div class="container-item">
-        <div class="movimentacao">
-          <button onclick="calcularVezes(); alertar(); albumIron(); playmusic()" class="botão">Música aleatória</button>
-          <button onclick="info()" class="botão">Informações</button>
-          <img src="img/Iron maiden 1 album.webp" alt="">
-        </div>
+        <button onclick="albumIron(); playmusic()" class="botão">Música aleatória</button>
+        <button onclick="info()" class="botão">Informações</button>
+        <img src="img/Iron maiden 1 album.webp" alt="">
       </div>
       <div class="container-item">
         <button onclick="albumKillers(); playmusic()" class="botão">Música aleatória</button>
@@ -124,11 +121,28 @@
   </div>
   </div>
 </body>
-
 </html>
 <script>
+  window.onload = calcularVezes()
 
-  var vetorAlbums = []
+  var vetorAlbuns = []
+  var cont1 = 0
+  var cont2 = 0
+  var cont3 = 0
+  var cont4 = 0
+  var cont5 = 0
+  var cont6 = 0
+  var cont7 = 0
+  var cont8 = 0
+  var cont9 = 0
+  var cont10 = 0
+  var cont11 = 0
+  var cont12 = 0
+  var cont13 = 0
+  var cont14 = 0
+  var cont15 = 0
+  var cont16 = 0
+  var cont17 = 0
 
   function calcularVezes() {
 
@@ -136,15 +150,31 @@
       if (response.ok) {
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          resposta.reverse();
 
-          var dadosG = {
-            vetorAlbums: resposta[0].vezes,
-          };
+          console.log(resposta)
+          for (var c = 0; c < resposta.length; c++) {
+            var registro = resposta[c];
+            vetorAlbuns.push(registro.vezes);
 
-          alertar(resposta[0].vezes);
-          sessionStorage.vetor = resposta[0].vezes
-   
+          }
+
+          cont1 = vetorAlbuns[0]
+          cont2 = vetorAlbuns[1]
+          cont3 = vetorAlbuns[2]
+          cont4 = vetorAlbuns[3]
+          cont5 = vetorAlbuns[4]
+          cont6 = vetorAlbuns[5]
+          cont7 = vetorAlbuns[6]
+          cont8 = vetorAlbuns[7]
+          cont9 = vetorAlbuns[8]
+          cont10 = vetorAlbuns[9]
+          cont11 = vetorAlbuns[10]
+          cont12 = vetorAlbuns[11]
+          cont13 = vetorAlbuns[12]
+          cont14 = vetorAlbuns[13]
+          cont15 = vetorAlbuns[14]
+          cont16 = vetorAlbuns[15]
+          cont17 = vetorAlbuns[16]
 
         });
       } else {
@@ -154,31 +184,6 @@
       .catch(function (error) {
         console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
       });
-  }
-
-  function alertar(vetorAlbums) {
-
-    for (var i = 0; i < resposta.length; i++) {
-      vetorAlbums.push(sessionStorage.vetor);
-    }
-
-      var cont1 = vetorAlbums[0]
-      var cont2 = vetorAlbums[1]
-      var cont3 = vetorAlbums[2]
-      var cont4 = vetorAlbums[3]
-      var cont5 = vetorAlbums[4]
-      var cont6 = vetorAlbums[5]
-      var cont7 = vetorAlbums[6]
-      var cont8 = vetorAlbums[7]
-      var cont9 = vetorAlbums[8]
-      var cont10 = vetorAlbums[9]
-      var cont11 = vetorAlbums[10]
-      var cont12 = vetorAlbums[11]
-      var cont13 = vetorAlbums[12]
-      var cont14 = vetorAlbums[13]
-      var cont15 = vetorAlbums[14]
-      var cont16 = vetorAlbums[15]
-      var cont17 = vetorAlbums[16]
   }
 
   var album = ""

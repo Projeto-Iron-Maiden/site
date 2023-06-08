@@ -10,32 +10,40 @@
     <link href='https://fonts.googleapis.com/css?family=times new roman' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>IRON MAIDEN</title>
-    <header>
-        <div class="header-wrapper">
-            <h1>IRON<br>MAIDEN</h1>
+
+    <header class="header">
+        <div class="logo">
+            <!-- <img src="img/eddie.png" alt="Logo"> -->
+            <span>IRON MAIDEN</span>
+        </div>
+        <div class="buttons">
+            <a href="index.html#membros" style="--anima:#00F519"><span>Playlist</span></a>
+            <a href="albuns.html" style="--anima:#8a2be2"><span>albuns</span></a>
+            <a href="index.html" style="--anima:#ff0000"><span>home</span></a>
         </div>
     </header>
+
 </head>
-
 <body>
-
     <div class="container">
-        <div class="section-1">
-            <h1>Confira mais informações!</h1>
-            <a href="historia.html" style="--anima:#1e9bff"><span>história</span></a>
-            <a href="membros.html" style="--anima:#00F519"><span>Membros</span></a>
-            <a href="albuns.html" style="--anima:#8a2be2"><span>Albuns</span></a>
-            <a href="curiosidades.html" style="--anima:#ff0000"><span>Curiosidades</span></a>
-        </div>
-        <div class="section-2">
-            <div class="caixa1">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="caixa2">
-            </div>
-        </div>
+      <div class="chart-container">
+        <!-- Gráfico de barras 1 -->
+        <div id="chart1" class="chart"><canvas id="myChart"></canvas></div>
+      </div>
+      <div class="chart-container">
+        <!-- Gráfico de barras 2 -->
+        <div id="chart2" class="chart"></div>
+      </div>
+      <div class="chart-container">
+        <!-- Gráfico de barras 3 -->
+        <div id="chart3" class="chart"></div>
+      </div>
+      <div class="chart-container">
+        <!-- Gráfico de pizza -->
+        <div id="chart4" class="chart"></div>
+      </div>
     </div>
-</body>
+  </body>
 
 </html>
 <script>
@@ -59,21 +67,31 @@
     const ctx = document.getElementById('myChart');
 
     new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Iron Maiden 1980', 'Killers 1981', 'The Number of the Beast 1982', 'Piece of Mind 1983', 'Powerslave 1984', 'Somewhere in Time 1986', 'Seventh Son of a Seventh Son 1988', 'No Prayer for the Dying 1990', 'Fear of the Dark 1992', 'The X Factor 1995', 'Virtual XI 1998', 'Brave New World 2000', 'Dance of Death 2003', 'A Matter of Life and Death 2006', 'The Final Frontier 2010', 'The Book of Souls 2015', 'Senjutsu 2021'],
-            datasets: [{
-                label: 'Vendas de discos em milhões',
-                data: [VironMaiden, Vkillers, Vnumberofbeast, Vpieceofmind, Vpowerslave, Vsomewhere, Vsomewhere, Vnoprayer, Vfearofthedark, Vxfactor, Vvirtualxi, Vbravenew, Vdanceofdeath, Vmatteroflife, Vfinalfrontier, Vbookofsouls, Vsenjutsu],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+    type: 'bar',
+    data: {
+        labels: ['Iron Maiden 1980', 'Killers 1981', 'The Number of the Beast 1982', 'Piece of Mind 1983', 'Powerslave 1984', 'Somewhere in Time 1986', 'Seventh Son of a Seventh Son 1988', 'No Prayer for the Dying 1990', 'Fear of the Dark 1992', 'The X Factor 1995', 'Virtual XI 1998', 'Brave New World 2000', 'Dance of Death 2003', 'A Matter of Life and Death 2006', 'The Final Frontier 2010', 'The Book of Souls 2015', 'Senjutsu 2021'],
+        datasets: [{
+            label: 'Vendas de discos em milhões',
+            data: [VironMaiden, Vkillers, Vnumberofbeast, Vpieceofmind, Vpowerslave, Vsomewhere, Vsomewhere, Vnoprayer, Vfearofthedark, Vxfactor, Vvirtualxi, Vbravenew, Vdanceofdeath, Vmatteroflife, Vfinalfrontier, Vbookofsouls, Vsenjutsu],
+            backgroundColor: [
+                'rgba(255, 0, 0, 0.8)',  // Vermelho neon
+                'rgba(255, 255, 0, 0.8)',  // Amarelo neon
+                // Adicione mais cores para os outros álbuns
+            ],
+            borderWidth: 3,  // Aumenta a largura das bordas para torná-las mais destacadas
+            borderColor: [
+                'rgba(255, 0, 0, 1)',  // Cor da borda para o vermelho neon
+                'rgba(255, 255, 0, 1)',  // Cor da borda para o amarelo neon
+                // Adicione as cores das bordas para os outros álbuns
+            ]
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
             }
         }
-    });
+    }
+});
 </script>
