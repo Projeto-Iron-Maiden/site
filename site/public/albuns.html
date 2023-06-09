@@ -176,6 +176,8 @@
           cont16 = vetorAlbuns[15]
           cont17 = vetorAlbuns[16]
 
+          /* localStorage.setItem("dados_vezes",vetorAlbuns) */
+          localStorage.setItem("dados_vezes", JSON.stringify(vetorAlbuns));
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
