@@ -337,10 +337,24 @@
     'audio/Piece_of_Mind/Where Eagles Dare (2015 Remaster).mp3'
   ]
   var powerslave = [
-
+    'audio/Powerslave/Aces High (2015 Remaster).mp3',
+    'audio/Powerslave/2 Minutes to Midnight (2015 Remaster).mp3',
+    'audio/Powerslave/Losfer Words (Big Orra) (2015 Remaster).mp3',
+    'audio/Powerslave/Flash of the Blade (2015 Remaster).mp3',
+    'audio/Powerslave/The Duellists (2015 Remaster).mp3',
+    'audio/Powerslave/Back in the Village (2015 Remaster).mp3',
+    'audio/Powerslave/Powerslave (2015 Remaster).mp3',
+    'audio/Powerslave/Rime of the Ancient Mariner (2015 Remaster).mp3'
   ]
   var somewhere = [
-
+    'audio/Somewhere_in_Time/Caught Somewhere in Time (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/Wasted Years (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/Sea of Madness (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/Heaven Can Wait (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/The Loneliness of the Long Distance Runner (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/Stranger in a Strange Land (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/Deja Vu (2015 Remaster).mp3',
+    'audio/Somewhere_in_Time/Alexander the Great (2015 Remaster).mp3'
   ]
   var seventh = []
   var noprayer = []
@@ -417,7 +431,30 @@
           'audio/Piece_of_Mind/Where Eagles Dare (2015 Remaster).mp3'
         )
       }
-
+      if (powerslave.length == 0) {
+        powerslave.push(
+          'audio/Powerslave/Aces High (2015 Remaster).mp3',
+          'audio/Powerslave/2 Minutes to Midnight (2015 Remaster).mp3',
+          'audio/Powerslave/Losfer Words (Big Orra) (2015 Remaster).mp3',
+          'audio/Powerslave/Flash of the Blade (2015 Remaster).mp3',
+          'audio/Powerslave/The Duellists (2015 Remaster).mp3',
+          'audio/Powerslave/Back in the Village (2015 Remaster).mp3',
+          'audio/Powerslave/Powerslave (2015 Remaster).mp3',
+          'audio/Powerslave/Rime of the Ancient Mariner (2015 Remaster).mp3'
+        )
+      }
+      if (somewhere.length == 0) {
+        somewhere.push(
+          'audio/Somewhere_in_Time/Caught Somewhere in Time (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/Wasted Years (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/Sea of Madness (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/Heaven Can Wait (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/The Loneliness of the Long Distance Runner (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/Stranger in a Strange Land (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/Deja Vu (2015 Remaster).mp3',
+          'audio/Somewhere_in_Time/Alexander the Great (2015 Remaster).mp3'
+        )
+      }
     }
 
     fetch("/album/atualizarVezes/", {
