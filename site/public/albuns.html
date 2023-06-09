@@ -15,7 +15,6 @@
 <body>
   <header class="header">
     <div class="logo">
-      <!-- <img src="img/eddie.png" alt="Logo"> -->
       <span>IRON MAIDEN</span>
     </div>
     <div class="buttons">
@@ -121,6 +120,7 @@
   </div>
   </div>
 </body>
+
 </html>
 <script>
   window.onload = calcularVezes()
@@ -293,14 +293,14 @@
     id = 17
   }
   var ironMaiden = [
-    'audio/IronMaiden/Charlotte the Harlot.mp3',
-    'audio/IronMaiden/Iron Maiden.mp3',
-    'audio/IronMaiden/Phantom of the Opera.mp3',
-    'audio/IronMaiden/Prowler.mp3',
-    'audio/IronMaiden/Remember Tomorrow.mp3',
-    'audio/IronMaiden/Running Free.mp3',
-    'audio/IronMaiden/Strange World.mp3',
-    'audio/IronMaiden/Transylvania.mp3'
+    'audio/Iron_Maiden/Charlotte the Harlot.mp3',
+    'audio/Iron_Maiden/Iron Maiden.mp3',
+    'audio/Iron_Maiden/Phantom of the Opera.mp3',
+    'audio/Iron_Maiden/Prowler.mp3',
+    'audio/Iron_Maiden/Remember Tomorrow.mp3',
+    'audio/Iron_Maiden/Running Free.mp3',
+    'audio/Iron_Maiden/Strange World.mp3',
+    'audio/Iron_Maiden/Transylvania.mp3'
   ]
   var killers = [
     'audio/Killers/Another life.mp3',
@@ -314,10 +314,34 @@
     'audio/Killers/The Ides of March.mp3',
     'audio/Killers/Wrathchild.mp3'
   ]
-  var numberofbeast = []
-  var pieceofmind = []
-  var powerslave = []
-  var somewhere = []
+  var numberofbeast = [
+    'audio/The_number_of_the_beast/22 Acacia Avenue.mp3',
+    'audio/The_number_of_the_beast/Children of the Damned.mp3',
+    'audio/The_number_of_the_beast/Gangland.mp3',
+    'audio/The_number_of_the_beast/Hallowed Be Thy Name.mp3',
+    'audio/The_number_of_the_beast/Invaders.mp3',
+    'audio/The_number_of_the_beast/The Number of the Beast.mp3',
+    'audio/The_number_of_the_beast/Run to the Hills.mp3',
+    'audio/The_number_of_the_beast/The Prisoner.mp3'
+  ];
+
+  var pieceofmind = [
+    'audio/Piece_of_Mind/Die With Your Boots On (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/Flight of Icarus (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/Quest for Fire (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/Revelations (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/Still Life (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/The Trooper (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/Sun and Steel (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/To Tame a Land (2015 Remaster).mp3',
+    'audio/Piece_of_Mind/Where Eagles Dare (2015 Remaster).mp3'
+  ]
+  var powerslave = [
+
+  ]
+  var somewhere = [
+
+  ]
   var seventh = []
   var noprayer = []
   var fearofthedark = []
@@ -369,7 +393,29 @@
         )
       }
       if (numberofbeast.length == 0) {
-
+        numberofbeast.push(
+          'audio/The_number_of_the_beast/22 Acacia Avenue.mp3',
+          'audio/The_number_of_the_beast/Children of the Damned.mp3',
+          'audio/The_number_of_the_beast/Gangland.mp3',
+          'audio/The_number_of_the_beast/Hallowed Be Thy Name.mp3',
+          'audio/The_number_of_the_beast/Invaders.mp3',
+          'audio/The_number_of_the_beast/The Number of the Beast.mp3',
+          'audio/The_number_of_the_beast/Run to the Hills.mp3',
+          'audio/The_number_of_the_beast/The Prisoner.mp3',
+        )
+      }
+      if (pieceofmind.length == 0) {
+        pieceofmind.push(
+          'audio/Piece_of_Mind/Die With Your Boots On (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/Flight of Icarus (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/Quest for Fire (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/Revelations (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/Still Life (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/The Trooper (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/Sun and Steel (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/To Tame a Land (2015 Remaster).mp3',
+          'audio/Piece_of_Mind/Where Eagles Dare (2015 Remaster).mp3'
+        )
       }
 
     }
