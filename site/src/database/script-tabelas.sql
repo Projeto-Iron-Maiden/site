@@ -261,10 +261,161 @@ VALUES
 	(161, 'The Parchment', 9, 'Heavy Metal', '12:39 min', 17),
 	(162, 'Hell on Earth', 10, 'Heavy Metal', '11:19 min', 17);
     
+	
+    INSERT INTO usuario (nome, email, senha, idade, fkAlbum_Favorito)
+VALUES
+  ('João Silva', 'joao.silva@gmail.com', 'senha123', 25, 4),
+  ('Maria Souza', 'maria.souza@gmail.com', 'abc123', 32, 16),
+  ('Pedro Santos', 'pedro.santos@gmail.com', 'senha456', 20, 2),
+  ('Ana Oliveira', 'ana.oliveira@gmail.com', 'qwerty', 28, 8),
+  ('Carlos Ferreira', 'carlos.ferreira@gmail.com', '123456', 30, 14),
+  ('Juliana Costa', 'juliana.costa@gmail.com', 'senha789', 23, 6),
+  ('Rafael Mendes', 'rafael.mendes@gmail.com', 'abcdef', 27, 12),
+  ('Lúcia Almeida', 'lucia.almeida@gmail.com', 'senha321', 31, 1),
+  ('Fernando Rocha', 'fernando.rocha@gmail.com', 'xyz789', 29, 9),
+  ('Mariana Lima', 'mariana.lima@gmail.com', 'senha555', 26, 5),
+  ('José Cardoso', 'jose.cardoso@gmail.com', '789xyz', 33, 15),
+  ('Camila Rodrigues', 'camila.rodrigues@gmail.com', 'senha999', 24, 3),
+  ('Gustavo Gomes', 'gustavo.gomes@gmail.com', 'qwerty123', 22, 7),
+  ('Amanda Santos', 'amanda.santos@gmail.com', 'senha000', 34, 13),
+  ('Ricardo Oliveira', 'ricardo.oliveira@gmail.com', 'abcdefg', 21, 11),
+  ('Isabela Costa', 'isabela.costa@gmail.com', 'senha777', 35, 17),
+  ('Paulo Sousa', 'paulo.sousa@gmail.com', '123abc', 19, 10),
+  ('Fernanda Alves', 'fernanda.alves@gmail.com', 'senha111', 37, 16),
+  ('Tiago Ramos', 'tiago.ramos@gmail.com', 'xyz123', 36, 2),
+  ('Luana Mendonça', 'luana.mendonca@gmail.com', 'senha888', 18, 8),
+  ('Roberto Castro', 'roberto.castro@gmail.com', '456xyz', 39, 4),
+  ('Eduarda Barbosa', 'eduarda.barbosa@gmail.com', 'senha555', 38, 16),
+  ('Gabriel Costa', 'gabriel.costa@gmail.com', '999abc', 17, 2),
+  ('Vitória Lima', 'vitoria.lima@gmail.com', 'senha222', 40, 8),
+  ('Raul Pereira', 'raul.pereira@gmail.com', 'abcdefg', 16, 14),
+  ('Larissa Fernandes', 'larissa.fernandes@gmail.com', '777xyz', 41, 1),
+  ('Jorge Santos', 'jorge.santos@gmail.com', 'senha444', 42, 9),
+  ('Sofia Almeida', 'sofia.almeida@gmail.com', '123xyz', 43, 5),
+  ('Gustavo Silva', 'gustavo.silva@gmail.com', 'senha999', 44, 15),
+  ('Laura Ribeiro', 'laura.ribeiro@gmail.com', 'xyz123', 45, 3),
+  ('Ricardo Costa', 'ricardo.costa@gmail.com', 'senha777', 46, 7),
+  ('Bruno Oliveira', 'bruno.oliveira@gmail.com', 'senha123', 28, 6),
+  ('Fernanda Costa', 'fernanda.costa@gmail.com', 'abc123', 33, 12),
+  ('Leonardo Santos', 'leonardo.santos@gmail.com', 'senha456', 25, 4),
+  ('Mariana Lima', 'mariana.lima@gmail.com', 'qwerty', 30, 10),
+  ('Lucas Ferreira', 'lucas.ferreira@gmail.com', '123456', 27, 16),
+  ('Isabela Souza', 'isabela.souza@gmail.com', 'senha789', 22, 8),
+  ('Gustavo Pereira', 'gustavo.pereira@gmail.com', 'abcdef', 26, 14),
+  ('Carolina Almeida', 'carolina.almeida@gmail.com', 'senha321', 29, 2),
+  ('Ricardo Rodrigues', 'ricardo.rodrigues@gmail.com', 'xyz789', 31, 9),
+  ('Luana Santos', 'luana.santos@gmail.com', 'senha555', 24, 5),
+  ('Rodrigo Mendes', 'rodrigo.mendes@gmail.com', '789xyz', 32, 11),
+  ('Gabriela Castro', 'gabriela.castro@gmail.com', 'senha999', 23, 7),
+  ('Pedro Gomes', 'pedro.gomes@gmail.com', 'qwerty123', 30, 13),
+  ('Amanda Oliveira', 'amanda.oliveira@gmail.com', 'senha000', 35, 1),
+  ('Marcelo Silva', 'marcelo.silva@gmail.com', 'abcdefg', 33, 17),
+  ('Juliana Costa', 'juliana.costa@gmail.com', 'senha777', 31, 3),
+  ('Daniel Sousa', 'daniel.sousa@gmail.com', '123abc', 29, 15),
+  ('Larissa Fernandes', 'larissa.fernandes@gmail.com', 'senha111', 27, 9),
+  ('Lucas Ramos', 'lucas.ramos@gmail.com', 'xyz123', 26, 5),
+  ('Laura Ribeiro', 'laura.ribeiro@gmail.com', 'senha888', 24, 16),
+  ('Rafael Mendes', 'rafael.mendes@gmail.com', '456xyz', 37, 2),
+  ('Vitória Barbosa', 'vitoria.barbosa@gmail.com', 'senha555', 38, 8),
+  ('Paulo Castro', 'paulo.castro@gmail.com', '999abc', 22, 4),
+  ('Isabella Lima', 'isabella.lima@gmail.com', 'senha222', 23, 12),
+  ('Roberto Santos', 'roberto.santos@gmail.com', 'abcdefg', 39, 6),
+  ('Amanda Costa', 'amanda.costa@gmail.com', '777xyz', 21, 14),
+  ('Bruno Fernandes', 'bruno.fernandes@gmail.com', 'senha444', 25, 1),
+  ('Rafaela Alves', 'rafaela.alves@gmail.com', '123456', 27, 10),
+  ('Mariana Pereira', 'mariana.pereira@gmail.com', 'senha777', 24, 7),
+  ('João Carvalho', 'joao.carvalho@gmail.com', 'xyz789', 26, 13);
+  
+  INSERT INTO usuario (nome, email, senha, idade, fkAlbum_Favorito)
+VALUES
+  ('Gabriela', 'gabriela@example.com', 'senha123', 25, 4),
+  ('Vinicius', 'vinicius@example.com', 'senha456', 32, 16),
+  ('Juliana', 'juliana@example.com', 'senha789', 28, 2),
+  ('Felipe', 'felipe@example.com', 'senha123', 22, 8),
+  ('Amanda', 'amanda@example.com', 'senha456', 31, 5),
+  ('Lucas', 'lucas@example.com', 'senha789', 29, 10),
+  ('Beatriz', 'beatriz@example.com', 'senha123', 26, 13),
+  ('Ricardo', 'ricardo@example.com', 'senha456', 33, 3),
+  ('Carolina', 'carolina@example.com', 'senha789', 27, 7),
+  ('Pedro', 'pedro@example.com', 'senha123', 23, 12),
+  ('Camila', 'camila@example.com', 'senha456', 30, 1),
+  ('Gustavo', 'gustavo@example.com', 'senha789', 24, 6),
+  ('Isabela', 'isabela@example.com', 'senha123', 31, 9),
+  ('Eduardo', 'eduardo@example.com', 'senha456', 28, 11),
+  ('Mariana', 'mariana@example.com', 'senha789', 25, 14),
+  ('Guilherme', 'guilherme@example.com', 'senha123', 32, 15),
+  ('Larissa', 'larissa@example.com', 'senha456', 29, 17),
+  ('Rodrigo', 'rodrigo@example.com', 'senha789', 26, 4),
+  ('Letícia', 'leticia@example.com', 'senha123', 33, 16),
+  ('Bruno', 'bruno@example.com', 'senha456', 27, 2),
+  ('Natália', 'natalia@example.com', 'senha789', 24, 8),
+  ('Thiago', 'thiago@example.com', 'senha123', 31, 5),
+  ('Fernanda', 'fernanda@example.com', 'senha456', 28, 10),
+  ('Alexandre', 'alexandre@example.com', 'senha789', 25, 13),
+  ('Bianca', 'bianca@example.com', 'senha123', 32, 3),
+  ('Leonardo', 'leonardo@example.com', 'senha456', 29, 7),
+  ('Marcela', 'marcela@example.com', 'senha789', 26, 12),
+  ('Rafaela', 'rafaela@example.com', 'senha123', 33, 1),
+  ('Diego', 'diego@example.com', 'senha456', 27, 6),
+  ('Carla', 'carla@example.com', 'senha789', 24, 9),
+  ('Roberto', 'roberto@example.com', 'senha123', 31, 11),
+  ('Lorena', 'lorena@example.com', 'senha456', 28, 14),
+  ('Henrique', 'henrique@example.com', 'senha789', 25, 15),
+  ('Alice', 'alice@example.com', 'senha123', 32, 4),
+  ('Giovanni', 'giovanni@example.com', 'senha456', 29, 16),
+  ('Mariane', 'mariane@example.com', 'senha789', 26, 2),
+  ('Renato', 'renato@example.com', 'senha123', 33, 8),
+  ('Vanessa', 'vanessa@example.com', 'senha456', 27, 5),
+  ('Raul', 'raul@example.com', 'senha789', 24, 10),
+  ('Priscila', 'priscila@example.com', 'senha123', 31, 13),
+  ('Igor', 'igor@example.com', 'senha456', 28, 3),
+  ('Renata', 'renata@example.com', 'senha789', 25, 7),
+  ('André', 'andre@example.com', 'senha123', 32, 12),
+  ('Luana', 'luana@example.com', 'senha456', 29, 1),
+  ('Maurício', 'mauricio@example.com', 'senha789', 26, 6),
+  ('Laura', 'laura@example.com', 'senha123', 33, 9),
+  ('Ramon', 'ramon@example.com', 'senha456', 27, 11),
+  ('Patrícia', 'patricia@example.com', 'senha789', 24, 14),
+  ('Henrique', 'henrique@example.com', 'senha123', 31, 15),
+  ('Júlia', 'julia@example.com', 'senha456', 28, 17),
+  ('Renan', 'renan@example.com', 'senha789', 25, 4),
+  ('Mirella', 'mirella@example.com', 'senha123', 32, 16),
+  ('Thales', 'thales@example.com', 'senha456', 29, 2),
+  ('Luciana', 'luciana@example.com', 'senha789', 26, 8),
+  ('Fábio', 'fabio@example.com', 'senha123', 33, 5),
+  ('Cristina', 'cristina@example.com', 'senha456', 27, 10),
+  ('Luiz', 'luiz@example.com', 'senha789', 24, 13),
+  ('Gabriel', 'gabriel@example.com', 'senha123', 31, 3),
+  ('Lívia', 'livia@example.com', 'senha456', 28, 7),
+  ('Marcelo', 'marcelo@example.com', 'senha789', 25, 12),
+  ('Sofia', 'sofia@example.com', 'senha123', 32, 1),
+  ('Ricardo', 'ricardo@example.com', 'senha456', 29, 6),
+  ('Raquel', 'raquel@example.com', 'senha789', 26, 9),
+  ('Jorge', 'jorge@example.com', 'senha123', 33, 11),
+  ('Renata', 'renata@example.com', 'senha456', 27, 14),
+  ('Alex', 'alex@example.com', 'senha789', 24, 15);
+  
+SELECT fkAlbum_Favorito, COUNT(*) AS quantidade
+FROM usuario
+GROUP BY fkAlbum_Favorito;
+
+SELECT COUNT(*) AS quantidade
+FROM usuario
+GROUP BY fkAlbum_Favorito
+HAVING fkAlbum_Favorito IS NOT NULL;
+
+SELECT SUM(quantidade) AS total
+FROM (
+    SELECT COUNT(*) AS quantidade
+    FROM usuario
+    GROUP BY fkAlbum_Favorito
+) AS subquery;
 
     select * from musica;
-    
+    select * from usuario;
     select Vezes_selecionado as vezes from album;
+    
+    
     
     
     

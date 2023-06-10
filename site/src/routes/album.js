@@ -12,4 +12,8 @@ router.get("/calcularVezes", function (req, res) {
     albumController.calcularVezes(req, res);
 });
 
+router.get("/calcularFavoritos", function (req, res) {
+    albumController.calcularFavoritos(req, res);
+});
+
 module.exports = router;

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IRON MAIDEN</title>
+  <title>ÁLBUNS</title>
   <script src="./js/funcoes.js"></script>
   <link rel="stylesheet" href="styles/albuns.css">
 
@@ -19,105 +19,141 @@
     </div>
     <div class="buttons">
       <a href="index.html#membros" style="--anima:#00F519"><span>Playlist</span></a>
-      <a href="dashboardEstatico.html" style="--anima:#8a2be2"><span>Estatisticas</span></a>
+      <a href="dashboard.html" style="--anima:#8a2be2"><span>Estatísticas</span></a>
       <a href="index.html" style="--anima:#ff0000"><span>home</span></a>
     </div>
   </header>
   <div class="container">
-    <img class="imagem-fundo" src="img/fundo.png" alt="">
-    <div class="container-albuns">
-      <div class="container-item">
-        <button onclick="albumIron(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/Iron maiden 1 album.webp" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumKillers(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/Killers.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumBeast(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/the number of the beast.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumPiece(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/Piece_of_Mind.webp" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumPower(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/powerslave.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumSomewhere(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/somewhere in time.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumSeventh(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/seventh son.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumPrayer(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/no prayer.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumFear(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/fear of the dark.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumX(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/The_x_factor_-_iron_maiden.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumVirtual(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/virtual xi.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumBrave(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/brave new world.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumDance(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/dance of death.png" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumMatter(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/a matter of life and death.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumFinal(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/the final frontier.jpg" alt="">
-      </div>
-      <div class="container-item">
-        <button onclick="albumBook(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/book of souls.jpg" alt="">
-      </div>
-      <div class="container-item-ultima">
-        <button onclick="albumSenjutsu(); playmusic()" class="botão">Música aleatória</button>
-        <button onclick="info()" class="botão">Informações</button>
-        <img src="img/senjutsu.jpg" alt="">
+    <div class="container-item">
+      <img src="img/Iron maiden 1 album.webp" alt="">
+      <div class="image-overlay">
+        <button onclick="albumIron(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='ironInfo' onclick="info()" class="overlay-button">Informações</button>
       </div>
     </div>
-    <audio id="msc_sorteada" src="audio/Iron Maiden.mp3"></audio>
+    <div class="container-item">
+      <img src="img/Killers.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumKillers(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='killersInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/the number of the beast.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumBeast(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='BeastInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/Piece_of_Mind.webp" alt="">
+      <div class="image-overlay">
+        <button onclick="albumPiece(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='PieceInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/powerslave.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumPower(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='PowerslaveInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/somewhere in time.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumSomewhere(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='SomewhereInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/seventh son.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumSeventh(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='SeventhInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/no prayer.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumPrayer(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='PrayerInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/fear of the dark.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumFear(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='FearInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/The_x_factor_-_iron_maiden.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumX(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='XInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/virtual xi.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumVirtual(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='XiInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/brave new world.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumBrave(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='BraveInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/dance of death.png" alt="">
+      <div class="image-overlay">
+        <button onclick="albumDance(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='DanceInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/a matter of life and death.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumMatter(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='MatterInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/the final frontier.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumFinal(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='FinalInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/book of souls.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumBook(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='SoulsInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
+    <div class="container-item">
+      <img src="img/senjutsu.jpg" alt="">
+      <div class="image-overlay">
+        <button onclick="albumSenjutsu(); playmusic()" class="overlay-button">Música aleatória</button>
+        <button id='SenjutsuInfo' onclick="info()" class="overlay-button">Informações</button>
+      </div>
+    </div>
   </div>
+  <div id="containerAlerta">
+    <div id="texto-info">Exibir sobre cada album</div>
+    <button id="voltar" onclick="voltar()">Voltar</button>
+  </div>
+  <audio id="msc_sorteada" src="audio/Iron Maiden.mp3"></audio>
   <div class="footer">
-    <h4></h4>
-    <span></span>
-  </div>
+    <div class="container2">
+      <h4>Iron Maiden Project</h4>
+      <span>Criado por Rafael Henrique SP-TECH 2023</span>
+    </div>
   </div>
 </body>
 
@@ -144,6 +180,50 @@
   var cont16 = 0
   var cont17 = 0
 
+  function info() {
+    if (btnId === "btn1") {
+      texto = "Texto para o Botão 1";
+    } else if (btnId === "btn2") {
+      texto = "Texto para o Botão 2";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    } else if (btnId === "btn3") {
+      texto = "Texto para o Botão 3";
+    }
+    
+    var telaInfo = document.getElementById("containerAlerta")
+    telaInfo.style.display = "block"
+  }
+  function voltar() {
+    var telaInfo = document.getElementById("containerAlerta")
+    telaInfo.style.display = "none"
+  }
   function calcularVezes() {
 
     fetch(`/album/calcularVezes/`, { cache: 'no-store' }).then(function (response) {
@@ -176,7 +256,7 @@
           cont16 = vetorAlbuns[15]
           cont17 = vetorAlbuns[16]
 
-          /* localStorage.setItem("dados_vezes",vetorAlbuns) */
+
           localStorage.setItem("dados_vezes", JSON.stringify(vetorAlbuns));
         });
       } else {

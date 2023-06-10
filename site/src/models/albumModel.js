@@ -8,6 +8,16 @@ function calcularVezes() {
   return database.executar(instrucaoSql);
 }
 
+function calcularFavoritos() {
+    instrucaoSql2 = `SELECT COUNT(*) AS quantidade
+    FROM usuario
+    GROUP BY fkAlbum_Favorito
+    HAVING fkAlbum_Favorito IS NOT NULL`;
+
+    console.log("Executando a instrução SQL2: \n" + instrucaoSql2);
+    return database.executar(instrucaoSql2);
+}
+
 function atualizarVezes(cont, idAlbum) {
     console.log("ACESSEI O ALBUM MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", cont, idAlbum);
     var instrucao = `
@@ -19,5 +29,6 @@ function atualizarVezes(cont, idAlbum) {
 
 module.exports = {
     atualizarVezes,
+    calcularFavoritos,
     calcularVezes
 };

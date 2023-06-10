@@ -17,6 +17,23 @@ function calcularVezes(req, res) {
     });
 }
 
+function calcularFavoritos(req, res) {
+
+    console.log(`Recuperando quantidade de favoritos em tempo real`);
+
+    albumModel.calcularFavoritos().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os ultimao favoritos.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 
 function atualizarVezes(req, res) {
 
@@ -52,5 +69,6 @@ function atualizarVezes(req, res) {
 
 module.exports = {
     atualizarVezes,
+    calcularFavoritos,
     calcularVezes
 }
