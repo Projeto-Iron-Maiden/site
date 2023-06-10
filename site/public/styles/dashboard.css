@@ -13,15 +13,14 @@ body {
   align-items: center;
   padding: 0 50px;
   z-index: 99;
-  border-bottom: 3px ridge red;
-  
-  
+  border-bottom: 2px solid black;
+
 }
 
 .logo {
   display: inline-block;
   color: red;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
   font-size: 50px;
   font-weight: bold;
 }
