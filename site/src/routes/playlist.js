@@ -7,4 +7,12 @@ router.get("/buscarAlbum/:albumId", function (req, res) {
     playlistController.buscarAlbum(req, res);
 });
 
+router.post("/adicionar", function (req, res) {
+    playlistController.adicionar(req, res);
+})
+
+router.get("/AtualizarPlaylist/:idusuario", function (req, res) {
+    playlistController.AtualizarPlaylist(req, res);
+});
+
 module.exports = router;

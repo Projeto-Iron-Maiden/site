@@ -22,85 +22,103 @@
             <a href="index.html" style="--anima:#ff0000"><span>home</span></a>
         </div>
     </header>
-    <h1>Monte sua playlist</h1>
+    <div class="containerPrincipal">
+        <div class="left-container">
+            <h1>Monte uma playlist do Iron Maiden!</h1>
+            <h2>Escolha suas músicas:</h2>
 
-    <h2>Escolha suas músicas:</h2>
-    <label for="album">Selecione o álbum</label>
-    <select id="playlist_album">
-        <option value="1">Iron Maiden</option>
-        <option value="2">Killers</option>
-        <option value="3">The Number Of The Beast</option>
-        <option value="4">Piece of Mind</option>
-        <option value="5">Powerslave</option>
-        <option value="6">Somewhere In Time</option>
-        <option value="7">Seventh Son of a Seventh Son</option>
-        <option value="8">No Prayer for the Dying</option>
-        <option value="9">Fear of the Dark</option>
-        <option value="10">The X Factor</option>
-        <option value="11">Virtual XI</option>
-        <option value="12">Brave New World</option>
-        <option value="13">Dance of Death</option>
-        <option value="14">A matter of life and death</option>
-        <option value="15">The Final Frontier</option>
-        <option value="16">The Book Of Souls</option>
-        <option value="17">Senjutsu</option>
-    </select>
-    <button onclick="buscarAlbum()">Buscar músicas</button>
-    <h2>Musicas do álbum escolhido:</h2>
-    <div id="MscExibidas"></div>
-    Selecione o número da música<input id='add_input' type="number"><button onclick="adicionar()">Adicionar na playlist</button>
+            <span id="MscExibidas">
+
+            </span>
+            <div class="escolha">
+                <label for="album">Selecione o álbum</label>
+                <select id="playlist_album">
+                    <option value="1">Iron Maiden</option>
+                    <option value="2">Killers</option>
+                    <option value="3">The Number Of The Beast</option>
+                    <option value="4">Piece of Mind</option>
+                    <option value="5">Powerslave</option>
+                    <option value="6">Somewhere In Time</option>
+                    <option value="7">Seventh Son of a Seventh Son</option>
+                    <option value="8">No Prayer for the Dying</option>
+                    <option value="9">Fear of the Dark</option>
+                    <option value="10">The X Factor</option>
+                    <option value="11">Virtual XI</option>
+                    <option value="12">Brave New World</option>
+                    <option value="13">Dance of Death</option>
+                    <option value="14">A matter of life and death</option>
+                    <option value="15">The Final Frontier</option>
+                    <option value="16">The Book Of Souls</option>
+                    <option value="17">Senjutsu</option>
+                </select>
+                <button onclick="buscarAlbum()">Buscar músicas</button>
+            </div>
+            <div class="escolha2">
+                Selecione o número da música<input id='add_input'  placeholder="0" type="number">
+                <button onclick="adicionar()">Adicionar na playlist</button>
+            </div>
+        </div>
+        <div class="right-container">
+            <h1>Sua Playlist:</h1>
+            <div id = 'lista_musica'></div>
+            <div class="modificar">
+                <button onclick="AtualizarPlaylist()">Atualizar Playlist</button>
+                <input type="number" placeholder="0"><button onclick="remover()">Remover Música</button>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
+    var idusuario = sessionStorage.getItem('ID_USUARIO')
+
     var vetorMusicaE = []
     var vetorTempoE = []
     var vetorIdMscE = []
 
-    var preMPlaylist = []
-    var preTPlaylist = []
-    var preIDPlaylist = []
+    var vetorMusicaF = []
+    var vetorTempoF = []
+    var vetorIdMscF = []
 
     function buscarAlbum() {
 
         var albumSelect = playlist_album.value
         MscExibidas.innerHTML = ''
-        fetch(`/playlist/buscarAlbum/${albumSelect}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        vetorMusicaE.splice(0, vetorMusicaE.length);
+        vetorTempoE.splice(0, vetorTempoE.length);
+        vetorIdMscE.splice(0, vetorIdMscE.length);
 
-                    console.log(resposta)
-                    for (var c = 0; c < resposta.length; c++) {
-                        var registro = resposta[c];
-                        vetorMusicaE.push(registro.titulo);
-                        vetorTempoE.push(registro.tempo);
-                        vetorIdMscE.push(registro.idMsc)
-                    }
-                    for (var i = 0; i < vetorMusicaE.length; i++) {
+        setTimeout(function() {
+        fetch(`/playlist/buscarAlbum/${albumSelect}`, { cache: 'no-store' })
+            .then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        console.log(resposta);
 
-                        var titulo = vetorMusicaE[i];
-                        var tempo = vetorTempoE[i];
+                        for (var c = 0; c < resposta.length; c++) {
+                            var registro = resposta[c];
+                            vetorMusicaE.push(registro.titulo);
+                            vetorTempoE.push(registro.tempo);
+                            vetorIdMscE.push(registro.idMsc);
+                        }
 
-
-                        MscExibidas.innerHTML += `${i}-${titulo} ${tempo}<br>`;
-
-                    }
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
+                        for (var i = 0; i < vetorMusicaE.length; i++) {
+                            var titulo = vetorMusicaE[i];
+                            var tempo = vetorTempoE[i];
+                            MscExibidas.innerHTML += `${i}-${titulo} ${tempo}<br>`;
+                        }
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
                 console.error(`Erro na obtenção dos dados ${error.message}`);
             });
-
-    }
+    }, 200);
+}
     function adicionar() {
-        var add = add_input.value
-        
-        preMPlaylist.push(vetorMusicaE[add])
-        preTPlaylist.push(vetorTempoE[add])
-        preIDPlaylist.push(vetorIdMscE[add])
+        var add = Number(add_input.value)
 
         fetch("/playlist/adicionar", {
             method: "POST",
@@ -108,12 +126,52 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                IDUserPlaylistServer: sessionStorage.getItem(ID_USUARIO),
-                IDMusicaServer: preIDPlaylist[add],
-                TituloServer: preMPlaylist[add],
-                TempoServer: preTPlaylist[add],
+                IDUserPlaylistServer: idusuario,
+                IDMusicaServer: vetorIdMscE[add],
+                TituloServer: vetorMusicaE[add],
+                TempoServer: vetorTempoE[add],
             })
         })
     }
+
+    function AtualizarPlaylist() {
+
+       
+        lista_musica.innerHTML = ''
+        vetorMusicaF.splice(0, vetorMusicaF.length);
+        vetorTempoF.splice(0, vetorTempoF.length);
+        vetorIdMscF.splice(0, vetorIdMscF.length);
+
+        setTimeout(function() {
+        fetch(`/playlist/AtualizarPlaylist/${idusuario}`, { cache: 'no-store' })
+            .then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        console.log(resposta);
+
+                        for (var c = 0; c < resposta.length; c++) {
+                            var registro = resposta[c];
+                            vetorMusicaF.push(registro.nome);
+                            vetorTempoF.push(registro.tempo);
+                            vetorIdMscF.push(registro.idMusica);
+                        }
+
+                        for (var i = 0; i < vetorMusicaF.length; i++) {
+                            var titulo = vetorMusicaF[i];
+                            var tempo = vetorTempoF[i];
+                            var id = vetorIdMscF[i]
+                            lista_musica.innerHTML += `Id: ${id}-${titulo} - ${tempo}<br>`;
+                        }
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados ${error.message}`);
+            });
+    }, 200);
+}
     
 </script>

@@ -11,16 +11,29 @@ function buscarAlbum(albumSelecionado) {
 
 }
 
-function adicionar() {
+function adicionar(IDUser, IDMusica, TituloPlaylist, DuracaoPlaylist) {
+  console.log("ACESSEI O PLAYLIST MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", IDUser, IDMusica, TituloPlaylist, DuracaoPlaylist);
+  
+  var instrucao = `
+      INSERT INTO playlist (fk_idUsuario, fk_IdMusica, titulo, duracao) VALUES ('${IDUser}', '${IDMusica}', '${TituloPlaylist}','${DuracaoPlaylist}');
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucao);
+  return database.executar(instrucao);
+}
 
-    instrucaoSql = `Insert into blablabla = ${albumSelecionado};`;
-  
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-  
-  }
+function  AtualizarPlaylist(idUsuarioFinal) {
+
+  instrucaoSql = `SELECT titulo as nome, fk_IdMusica as idMusica, duracao as tempo
+  FROM playlist
+  WHERE fk_idUsuario = ${idUsuarioFinal}`;
+
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+
+}
 
 module.exports = {
     buscarAlbum,
-    adicionar
+    adicionar,
+    AtualizarPlaylist
 };
