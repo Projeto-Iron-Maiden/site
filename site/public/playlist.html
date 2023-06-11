@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYLIST</title>
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="styles/playlist.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <span>IRON MAIDEN</span>
+        </div>
+        <div class="buttons">
+            <a href="albuns.html" style="--anima:#00F519"><span>Álbuns</span></a>
+            <a href="dashboard.html" style="--anima:#8a2be2"><span>Estatísticas</span></a>
+            <a href="index.html" style="--anima:#ff0000"><span>home</span></a>
+        </div>
+    </header>
+    <h1>Monte sua playlist</h1>
+
+    <h2>Escolha suas músicas:</h2>
+    <label for="album">Selecione o álbum</label>
+    <select id="playlist_album">
+        <option value="1">Iron Maiden</option>
+        <option value="2">Killers</option>
+        <option value="3">The Number Of The Beast</option>
+        <option value="4">Piece of Mind</option>
+        <option value="5">Powerslave</option>
+        <option value="6">Somewhere In Time</option>
+        <option value="7">Seventh Son of a Seventh Son</option>
+        <option value="8">No Prayer for the Dying</option>
+        <option value="9">Fear of the Dark</option>
+        <option value="10">The X Factor</option>
+        <option value="11">Virtual XI</option>
+        <option value="12">Brave New World</option>
+        <option value="13">Dance of Death</option>
+        <option value="14">A matter of life and death</option>
+        <option value="15">The Final Frontier</option>
+        <option value="16">The Book Of Souls</option>
+        <option value="17">Senjutsu</option>
+    </select>
+    <button onclick="buscarAlbum()">Buscar músicas</button>
+    <h2>Musicas do álbum escolhido:</h2>
+    <div id="MscExibidas"></div>
+    Selecione o número da música<input id='add_input' type="number"><button onclick="adicionar()">Adicionar na playlist</button>
+</body>
+<script>
+    var vetorMusicaE = []
+    var vetorTempoE = []
+    var vetorIdMscE = []
+
+    var preMPlaylist = []
+    var preTPlaylist = []
+    var preIDPlaylist = []
+
+    function buscarAlbum() {
+
+        var albumSelect = playlist_album.value
+        MscExibidas.innerHTML = ''
+        fetch(`/playlist/buscarAlbum/${albumSelect}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    console.log(resposta)
+                    for (var c = 0; c < resposta.length; c++) {
+                        var registro = resposta[c];
+                        vetorMusicaE.push(registro.titulo);
+                        vetorTempoE.push(registro.tempo);
+                        vetorIdMscE.push(registro.idMsc)
+                    }
+                    for (var i = 0; i < vetorMusicaE.length; i++) {
+
+                        var titulo = vetorMusicaE[i];
+                        var tempo = vetorTempoE[i];
+
+
+                        MscExibidas.innerHTML += `${i}-${titulo} ${tempo}<br>`;
+
+                    }
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados ${error.message}`);
+            });
+
+    }
+    function adicionar() {
+        var add = add_input.value
+        
+        preMPlaylist.push(vetorMusicaE[add])
+        preTPlaylist.push(vetorTempoE[add])
+        preIDPlaylist.push(vetorIdMscE[add])
+
+        fetch("/playlist/adicionar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                IDUserPlaylistServer: sessionStorage.getItem(ID_USUARIO),
+                IDMusicaServer: preIDPlaylist[add],
+                TituloServer: preMPlaylist[add],
+                TempoServer: preTPlaylist[add],
+            })
+        })
+    }
+    
+</script>
