@@ -21,6 +21,16 @@ function adicionar(IDUser, IDMusica, TituloPlaylist, DuracaoPlaylist) {
   return database.executar(instrucao);
 }
 
+function remover(IDUser, MscRemove) {
+  console.log("ACESSEI O PLAYLIST MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", IDUser, MscRemove);
+  
+  var instrucao = `
+    DELETE FROM playlist WHERE fk_idUsuario = ${IDUser} AND fk_idMusica = ${MscRemove};
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucao);
+  return database.executar(instrucao);
+}
+
 function  AtualizarPlaylist(idUsuarioFinal) {
 
   instrucaoSql = `SELECT titulo as nome, fk_IdMusica as idMusica, duracao as tempo
@@ -35,5 +45,6 @@ function  AtualizarPlaylist(idUsuarioFinal) {
 module.exports = {
     buscarAlbum,
     adicionar,
+    remover,
     AtualizarPlaylist
 };

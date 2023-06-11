@@ -13,7 +13,7 @@ body {
     padding: 0 50px;
     border-bottom: 2px solid black;
     z-index: 99;
-    
+
 }
 
 .logo {
@@ -124,6 +124,7 @@ a span {
     font-size: 18px;
     text-align: start;
 }
+
 #lista_musica {
     display: flex;
     width: 600px;
@@ -135,11 +136,12 @@ a span {
     font-size: 18px;
     text-align: start;
 }
+
 .modificar {
     display: flex;
     font-size: 20px;
     align-items: center;
-    margin-top:15px;
+    margin-top: 15px;
     margin-bottom: 10px;
     margin-left: 0px;
     color: #FFCC00;
@@ -147,6 +149,7 @@ a span {
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
 }
+
 .escolha {
     display: flex;
     font-size: 20px;
@@ -183,7 +186,7 @@ a span {
     font-family: 'Times New Roman', Times, serif;
 }
 
- input {
+input {
     width: 70px;
     padding: 8px;
     margin-left: 5px;
@@ -232,7 +235,7 @@ a span {
     outline: 2px solid #FFCC00;
 }
 
-#music-player {
+#controls {
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -242,23 +245,25 @@ a span {
     padding: 10px;
     display: flex;
     align-items: center;
-  }
-  
-  #controls button {
+}
+
+#controls button {
+    width: 80px;
+    height: 40px;
     color: red;
-    background-color: #27282c;
+    background-color: #333;
     cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  #barra-volume {
+    margin: 5px;
+}
+
+#barra-volume {
     width: 100px;
-  }
-  
-  #duracao {
+   
+}
+
+#duracao {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
     color: #FFCC00;
     margin-left: 10px;
-  }
-
-
-
+}

@@ -63,19 +63,89 @@
             <div id='lista_musica'></div>
             <div id="tempo-total"></div>
             <div class="modificar">
-                <button onclick="remover()">Remover Música</button><input type="number" placeholder="0">
+                <button onclick="remover()">Remover Música</button><input id = 'input_deletar' type="number" placeholder="0">
                 <button onclick="AtualizarPlaylist()">Atualizar Playlist</button>
             </div>
             <div class="ouvir">
-                <button onclick="tocarMsc()">Tocar música</button><input id='input_escolha' type="number"
-                    placeholder="0">
+                <button onclick="tocarMsc()">Tocar música</button><input id='input_escolha' type="number"placeholder="0">
                 <button onclick="mscAleatoria()">Música Aleatória</button>
                 <audio id="msc_sorteada" src=""></audio>
+                <div id="controls">
+                    <button id="pause-btn">&#10074;&#10074;</button>
+                    <button id="anterior-button">&#9664;&#9664;</button>
+                    <button id="tocar-btn">&#9658;</button>
+                    <button id="proxima-button">&#9658;&#9658;</button>
+                    <input id="barra-volume" type="range" min="0" max="1" step="0.1" value="1">
+                    <span id="duracao">00:00</span>
+                </div>
             </div>
         </div>
     </div>
 </body>
 <script>
+    var posicao = 0
+    window.addEventListener('load', function () {
+
+        var msc_sorteada = document.getElementById('msc_sorteada');
+        var tocarBtn = document.getElementById('tocar-btn');
+        var pauseBtn = document.getElementById('pause-btn');
+        var proximaBtn = document.getElementById('proxima-button');
+        var anteriorBtn = document.getElementById('anterior-button');
+        var barraVolume = document.getElementById('barra-volume');
+        var duracaoMsc = document.getElementById('duracao');
+
+        tocarBtn.addEventListener('click', function () {
+            msc_sorteada.play();
+        })
+
+        pauseBtn.addEventListener('click', function () {
+            msc_sorteada.pause();
+        })
+
+        proximaBtn.addEventListener('click', function () {
+            if (vetorMusicaF.length > 0) {
+
+                if (posicao < vetorMusicaF.length - 1) {
+                    posicao++
+
+                    var musica = msc_sorteada;
+                    musica.src = '/audio/' + `${vetorMusicaF[posicao]}` + '.mp3';
+                    musica.play();
+
+                    console.log(vetorMusicaF[posicao]);
+                } else {
+
+                    alert('Você chegou à última música.');
+                }
+            }
+        });
+        anteriorBtn.addEventListener('click', function () {
+            if (vetorMusicaF.length > 0) {
+
+                if (posicao < vetorMusicaF.length - 1) {
+                    posicao--
+
+                    var musica = msc_sorteada;
+                    musica.src = '/audio/' + `${vetorMusicaF[posicao]}` + '.mp3';
+                    musica.play();
+
+                    console.log(vetorMusicaF[posicao]);
+                } else {
+
+                    alert('Você chegou à primeira música.');
+                }
+            }
+        });
+        barraVolume.addEventListener('input', function () {
+            msc_sorteada.volume = barraVolume.value;
+        })
+
+        msc_sorteada.addEventListener('timeupdate', function () {
+            var minutos = Math.floor(msc_sorteada.currentTime / 60)
+            var segundos = Math.floor(msc_sorteada.currentTime % 60)
+            duracaoMsc.textContent = ('0' + minutos).slice(-2) + ':' + ('0' + segundos).slice(-2)
+        })
+    })
 
     var idusuario = sessionStorage.getItem('ID_USUARIO')
 
@@ -181,7 +251,19 @@
                 });
         }, 200);
     }
-    function deletar() {
+    function remover() {
+        var removerMusica = input_deletar.value
+
+        fetch("/playlist/remover", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                IDUserPlaylistServer: idusuario,
+                removerMusicaServer: removerMusica                                        
+            })
+        })
 
     }
     function tocarMsc() {
@@ -192,7 +274,7 @@
             var posicao = vetorIdMscF.findIndex(function (item) {
                 return item === musicaEscolhida;
             });
-            
+
             var musica = msc_sorteada
             musica.src = '/audio/' + `${vetorMusicaF[posicao]}` + '.mp3'
             musica.play();

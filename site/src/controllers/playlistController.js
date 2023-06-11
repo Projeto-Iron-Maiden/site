@@ -55,6 +55,37 @@ function adicionar(req, res) {
             );
     }
 }
+function remover(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo playlist.html
+   
+    var IDUser = req.body.IDUserPlaylistServer;
+    var MscRemove = req.body.removerMusicaServer;
+   
+    // Faça as validações dos valores
+    if (IDUser == undefined) {
+        res.status(400).send("Seu ID está undefined!");
+    } else if (MscRemove == undefined) {
+        res.status(400).send("Seu MscRemove está undefined!");
+    }  else {
+
+        // Passe os valores como parâmetro e vá para o arquivo playlistModel.js
+        playlistModel.remover(IDUser, MscRemove)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a adição! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 function AtualizarPlaylist(req, res) {
 
     var idUsuarioFinal = req.params.idusuario
@@ -76,5 +107,6 @@ function AtualizarPlaylist(req, res) {
 module.exports = {
     buscarAlbum,
     adicionar,
+    remover,
     AtualizarPlaylist
 }
