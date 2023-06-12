@@ -7,20 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IRON MAIDEN</title>
-  <script src="./js/funcoes.js"></script>
   <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
   <header class="header">
     <div class="logo">
-      <!-- <img src="img/eddie.png" alt="Logo"> -->
       <a href="#home" class="botao-home"><span>IRON MAIDEN</span></a>
     </div>
     <div class="buttons">
       <a href="#historia" style="--anima:#1e9bff"><span>história</span></a>
       <a href="#membros" style="--anima:#00F519"><span>Membros</span></a>
-      <a href="albuns.html" style="--anima:#8a2be2"><span>Álbuns</span></a>
       <a href="login.html" style="--anima:#ff0000"><span>Login</span></a>
     </div>
   </header>
@@ -86,43 +83,32 @@
     </div>
   </section>
   <section id="membros">
-    <div class="container3">
-      <img class="imagem-fundo" src="img/fundo.png" alt="">
-      <!-- <div class="container-membros">
-      <h2>Membros do Iron maiden</h2>
-      <h3>Fundadores</h3>
       <div class="member-container">
-        <img class="member-image" src="img/steve-harris.jpeg" alt="Steve Harris">
-        <div>
-          <h4>Steve Harris</h4>
-          <p>Descrição do Steve Harris.</p>
+        <div class="member-info">
+          <h1>Selecione um membro da banda</h1>
+          <select id="select_album">
+            <option value="1">Bruce Dickinson</option>
+            <option value="2">Paul Di'Anno</option>
+            <option value="3">Blaze Bayley</option>
+            <option value="4">Steve Harris</option>
+            <option value="5">Dave Murray</option>
+            <option value="6">Adrian Smith</option>
+            <option value="7">Janick Gers</option>
+            <option value="8">Dennis Stratton</option>
+            <option value="9">Clive Burr</option>
+            <option value="10">Nicko McBrain</option>
+        </select>
+          <h2 id="nome">Nome do Membro</h2>
+          <p id="funcao">Função: Função do Membro</p>
+          <p id="dtE">Data de Entrada: Data de Entrada do Membro</p>
+          <p id="dtS">Data de Saída: Data de Saída do Membro</p>
+          <p id="local">Local de Nascimento: Local de Nascimento do Membro</p>
+          <p id="dtNas">Data de Nascimento: Data de Nascimento do Membro</p>
+        </div>
+        <div class="member-img">
+          <img id ='foto' src="" alt="Foto do Membro">
         </div>
       </div>
-      <div class="member-container">
-        <img class="member-image" src="caminho-para-a-imagem-dave-murray.jpg" alt="Dave Murray">
-        <div>
-          <h4>Dave Murray</h4>
-          <p>Descrição do Dave Murray.</p>
-        </div>
-      </div>
-      <div class="member-container">
-        <img class="member-image" src="caminho-para-a-imagem-doug-sampson.jpg" alt="Doug Sampson">
-        <div>
-          <h4>Doug Sampson</h4>
-          <p>Descrição do Doug Sampson.</p>
-        </div>
-      </div>
-      <h3>Outros membros</h3>
-      <!-- Repita o seguinte bloco para cada membro adicional -->
-      <!-- <div class="member-container">
-        <img class="member-image" src="caminho-para-a-imagem-membro.jpg" alt="Nome do Membro">
-        <div>
-          <h4>Nome do Membro</h4>
-          <p>Descrição do membro.</p>
-        </div>
-      </div> -->
-      <!-- Repita o bloco acima para os outros membros -->
-    </div>
   </section>
   </div>
   <div class="footer">
@@ -161,6 +147,98 @@
       titulo.innerHTML = "Anos 2020"
       paragrafo.innerHTML = `"Senjutsu" é o décimo sétimo álbum de estúdio da banda de heavy metal Iron Maiden, lançado em 3 de setembro de 2021. O título do álbum faz referência a um termo japonês que se refere às técnicas e estratégias militares utilizadas nas artes marciais, especialmente no contexto dos samurais. É um álbum duplo, apresentando dez faixas no total, e marca o primeiro lançamento de estúdio do Iron Maiden desde "The Book of Souls", de 2015. "Senjutsu" recebeu uma recepção positiva da crítica e dos fãs, sendo elogiado pela habilidade musical da banda, suas letras envolventes e pela atmosfera épica que transmite. O álbum mostra que o Iron Maiden continua a explorar e evoluir seu som característico, mantendo-se fiel ao seu legado e entregando uma obra musicalmente rica e emocionante. `
     }
-
   }
+  function atualizarInfos(){
+  if (select_album.value == 1) {
+  nome.innerHTML = 'Bruce Dickinson'
+  dtE.innerHTML = "Data de Entrada: 1 de setembro 1981"
+  dtS.innerHTML = ""
+  local.innerHTML = "Local de Nascimento: Londres, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 7 de outubro 1958"
+  funcao.innerHTML = "Função: Vocalista"
+  foto.src = "img/BruceDick.jpeg"
+}
+if (select_album.value == 2) {
+  nome.innerHTML = "Paul Di'Anno"
+  dtE.innerHTML = "Data de Entrada: 1 de janeiro 1978"
+  dtS.innerHTML = "Data de Saída: 31 de agosto 1981"
+  local.innerHTML = "Local de Nascimento: Leytonstone, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 17 de maio 1958"
+  funcao.innerHTML = "Função: Vocalista"
+  foto.src = "img/paulDino.jpg"
+}
+if (select_album.value == 3) {
+  nome.innerHTML = "Blaze Bayley"
+  dtE.innerHTML = "Data de Entrada: 1 de março 1994"
+  dtS.innerHTML = "Data de Saída: 28 de fevereiro 1999"
+  local.innerHTML = "Local de Nascimento: Birmingham, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 29 de maio 1963"
+  funcao.innerHTML = "Função: Vocalista"
+  foto.src = "img/Blaze.jpg"
+}
+if (select_album.value == 4) {
+  nome.innerHTML = "Steve Harris"
+  dtE.innerHTML = "Data de Entrada: 25 de dezembro 1975"
+  dtS.innerHTML = ""
+  local.innerHTML = "Local de Nascimento: Leytonstone, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 12 de março 1956"
+  funcao.innerHTML = "Função: Baixista"
+  foto.src = "img/steve.jpg"
+}
+if (select_album.value == 5) {
+  nome.innerHTML = "Dave Murray"
+  dtE.innerHTML = "Data de Entrada: 1 de janeiro 1976"
+  dtS.innerHTML = ""
+  local.innerHTML = "Local de Nascimento: Londres, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 23 de dezembro 1958"
+  funcao.innerHTML = "Função: Guitarrista"
+  foto.src = "img/dave.jpg"
+}
+if (select_album.value == 6) {
+  nome.innerHTML = "Adrian Smith"
+  dtE.innerHTML = "Data de Entrada: 1 de outubro 1980"
+  dtS.innerHTML = "Data de Saída: 28 de fevereiro 1990"
+  local.innerHTML = "Local de Nascimento: Hackney, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 27 de fevereiro 1957"
+  funcao.innerHTML = "Função: Guitarrista"
+  foto.src = "img/adrian.jpg"
+}
+if (select_album.value == 7) {
+  nome.innerHTML = "Janick Gers"
+  dtE.innerHTML = "Data de Entrada: 1 de janeiro 1990"
+  dtS.innerHTML = ""
+  local.innerHTML = "Local de Nascimento: Hartlepool, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 27 de janeiro 1957"
+  funcao.innerHTML = "Função: Guitarrista"
+  foto.src = "img/janick.jpg"
+}
+if (select_album.value == 8) {
+  nome.innerHTML = "Dennis Stratton"
+  dtE.innerHTML = "Data de Entrada: 1 de março 1979"
+  dtS.innerHTML = "Data de Saída: 30 de setembro 1980"
+  local.innerHTML = "Local de Nascimento: Londres, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 9 de fevereiro 1952"
+  funcao.innerHTML = "Função: Guitarrista"
+  foto.src = "img/dennis.jpg"
+}
+if (select_album.value == 9) {
+  nome.innerHTML = "Clive Burr"
+  dtE.innerHTML = "Data de Entrada: 1 de janeiro 1979"
+  dtS.innerHTML = "Data de Saída: 31 de dezembro 1982"
+  local.innerHTML = "Local de Nascimento: East Ham, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 8 de março 1957"
+  funcao.innerHTML = "Função: Baterista"
+  foto.src = "img/clive.jpeg"
+}
+if (select_album.value == 10) {
+  nome.innerHTML = "Nicko McBrain"
+  dtE.innerHTML = "Data de Entrada: 1 de setembro 1982"
+  dtS.innerHTML = ""
+  local.innerHTML = "Local de Nascimento: Londres, Reino Unido"
+  dtNas.innerHTML = "Data de Nascimento: 5 de junho 1952"
+  funcao.innerHTML = "Função: Baterista"
+  foto.src = "img/nicko.jpeg"
+}
+  }
+  setInterval(atualizarInfos, 500);
 </script>

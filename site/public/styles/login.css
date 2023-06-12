@@ -1,12 +1,13 @@
 body {
     margin: 0px;
-    font-family: 'Poppins';
-   
     max-width: 1200px;
     margin-left: 40px;
     background-image: url("../img/albuns.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
 }
 
 .main-login {
@@ -15,26 +16,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.left-login {
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-right: 60px;
-}
-
-.left-login>h1 {
-    font-size: 3vw;
-    color: #e49c2b;
-}
-
-.left-login-image {
-    margin-top: -70px;
-    width: 38vw;
 }
 
 .right-login {
@@ -53,7 +34,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background: #ffffff;
+    background:  #27282c;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
 }
@@ -78,8 +59,8 @@ body {
     border-radius: 10px;
     border: none;
     padding: 15px;
-    background: #F9F9F9;
-    color: black;
+    background: #333;
+    color: red;
     font-size: 12pt;
     box-shadow: 0px 10px 40px #00000056;
     outline: none;
@@ -87,7 +68,7 @@ body {
 }
 
 .text-field>label {
-    color: #000000;
+    color: #FFCC00;
     margin-bottom: 10px;
 }
 
@@ -101,8 +82,12 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     background: red;
-    color: #ffffff;
+    color: black;
     letter-spacing: 3px;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #00000056;
+}
+button:hover{
+    color: #FFCC00;
+    cursor: pointer;
 }

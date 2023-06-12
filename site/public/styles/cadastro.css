@@ -1,10 +1,11 @@
 body {
     margin: 0px;
-    font-family: '';
-    background: #010200
-    ;
+    background: #010200;
     max-width: 1200px;
     margin-left: 40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: #FFCC00; 
 }
 
 .main-cadastro-user{
@@ -43,8 +44,8 @@ body {
     align-items: center;
     width: 560px;
     height: 560px;
-    margin-top: 120px;
-
+    margin-top: 40px;
+   
 }
 
 
@@ -56,8 +57,8 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background: #ffffff;
-    border-radius: 20px;
+    background: #333;
+    border-radius: 10px;
     box-shadow: 0px 10px 40px #00000056;
 }
 
@@ -78,7 +79,7 @@ body {
 
 .text-field > input{
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     padding: 15px;
     background: #F9F9F9;
@@ -90,17 +91,16 @@ body {
 }
 
 .text-field > label{
-    color: #000000;
+    color: #FFCC00;
     margin-bottom: 10px;
 }
-
 
 .botao-cadastro-user{
     width: 100%;
     padding: 16px 0px;
     margin: 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     outline: none;
     font-weight: 700;
     text-transform: uppercase;
@@ -108,5 +108,25 @@ body {
     color: #ffffff;
     letter-spacing: 3px;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00000056;
+    
+}
+
+.botao-cadastro-user:hover{
+    color: #FFCC00;
+    cursor: pointer;
+}
+ select{
+    width: 160px;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: red;
+    border: 2px solid black;
+    border-radius: 4px;
+  }
+ 
+ select:focus {
+    outline: 2px solid #FFCC00;
 }

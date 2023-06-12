@@ -61,7 +61,34 @@ CREATE TABLE playlist (
   FOREIGN KEY (fk_idUsuario) REFERENCES usuario(id),
   FOREIGN KEY (fk_IdMusica) REFERENCES musica(idMusica)
 );
- 
+ -- Inserts para tabela MembrosBanda
+INSERT INTO MembrosBanda (idMembro, nome, funcao, DtEntrada, DtSaida)
+VALUES
+  (1, 'Paul Di\'Anno', 'Vocalista', '1978-01-01', '1981-08-31'),
+  (2, 'Bruce Dickinson', 'Vocalista', '1981-09-01', NULL),
+  (3, 'Blaze Bayley', 'Vocalista', '1994-03-01', '1999-02-28'),
+  (4, 'Steve Harris', 'Baixista', '1975-12-25', NULL),
+  (5, 'Dave Murray', 'Guitarrista', '1976-01-01', NULL),
+  (6, 'Adrian Smith', 'Guitarrista', '1980-10-01', '1990-02-28'),
+  (7, 'Janick Gers', 'Guitarrista', '1990-01-01', NULL),
+  (8, 'Dennis Stratton', 'Guitarrista', '1979-03-01', '1980-09-30'),
+  (9, 'Clive Burr', 'Baterista', '1979-01-01', '1982-12-31'),
+  (10, 'Nicko McBrain', 'Baterista', '1982-09-01', NULL);
+
+-- Inserts para tabela InformacoesPessoais
+INSERT INTO InformacoesPessoais (idInfo, dtNasc, localizacao, fkMembro)
+VALUES
+  (1, '1958-05-17', 'London, Reino Unido', 1),
+  (2, '1958-08-07', 'London, Reino Unido', 2),
+  (3, '1963-05-29', 'Birmingham, Reino Unido', 3),
+  (4, '1956-03-12', 'Leytonstone, Reino Unido', 4),
+  (5, '1958-12-23', 'London, Reino Unido', 5),
+  (6, '1957-02-27', 'Hackney, Reino Unido', 6),
+  (7, '1957-01-27', 'Hartlepool, Reino Unido', 7),
+  (8, '1952-02-09', 'London, Reino Unido', 8),
+  (9, '1957-03-08', 'East Ham, Reino Unido', 9),
+  (10, '1952-06-05', 'Londres, Reino Unido', 10);
+  
  INSERT INTO album (idAlbum, Nome, DtLançamento, QtdMusicas, DuraçãoTotal, Gravadora, Vezes_Selecionado)
 VALUES 
     (1, 'Iron Maiden', '1980-04-14', 8, '40:06 min', 'EMI', 0),
@@ -445,8 +472,15 @@ VALUES (1, 5, 'Minha Playlist', '03:42');
 
 select * from playlist;
     
+
+SELECT titulo as nome, fk_IdMusica as idMusica, duracao as tempo
+FROM playlist
+WHERE fk_idUsuario = 1;
+
+select * from playlist;
+DELETE FROM playlist WHERE fk_idUsuario = '1' AND fk_idMusica = '6';
     
-    
-    
+select * from membrosBanda;
+select * from InformacoesPessoais;
     
     
