@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Iron Maiden';
+  src: url('maiden.ttf');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -20,9 +25,10 @@ body {
 .logo {
   display: inline-block;
   color: red;
-  text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 50px;
   font-weight: bold;
+  font-family: 'Iron Maiden'!important;
 }
 
 .logo img {
@@ -102,4 +108,34 @@ a span {
   width: 700px;
   height: 350px;
   border: 3px ridge #FFCC00;
+}
+
+.container2 {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.footer {
+  border-top: 2px solid black;
+  height: 65px;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.footer h4 {
+  margin: 0;
+}
+
+.footer .container2 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer .container2 .version {
+  font-size: 12px;
+  font-weight: 800;
 }
